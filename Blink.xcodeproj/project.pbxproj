@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
+		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498711BAA9794008A8ECF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498731BAA979E008A8ECF /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -44,7 +49,12 @@
 		667B62A522C95D039ADDD65B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
+		BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
+		BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
 		BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBE498711BAA9794008A8ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE498731BAA979E008A8ECF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +73,7 @@
 		BBF384551BAA784600EDF854 /* BlinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkUITests.swift; sourceTree = "<group>"; };
 		BBF384571BAA784600EDF854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBFBE7911BAA9DD300438AF9 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		BBFBE7931BAA9F4500438AF9 /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = SOURCE_ROOT; };
+		BBFBE7931BAA9F4500438AF9 /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,20 +124,40 @@
 			children = (
 				BB4288CE1BAAA71800B211F6 /* User.swift */,
 			);
-			name = User;
+			path = User;
 			sourceTree = "<group>";
 		};
 		BB4288D01BAAAA0000B211F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB4288D91BAABA6900B211F6 /* Cells */,
+				BB4288D81BAABA0D00B211F6 /* ViewsHelpers */,
 			);
-			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB4288D81BAABA0D00B211F6 /* ViewsHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				BB4288D11BAAABA700B211F6 /* Alert.swift */,
+			);
+			path = ViewsHelpers;
+			sourceTree = "<group>";
+		};
+		BB4288D91BAABA6900B211F6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */,
+				BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				BBE498751BAA97A2008A8ECF /* StartupControllers */,
+				BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE498791BAA990D008A8ECF /* StoryBoard+instanceController.swift */,
+				BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,7 +269,7 @@
 			children = (
 				BBFBE7931BAA9F4500438AF9 /* Twilio.swift */,
 			);
-			name = Twilio;
+			path = Twilio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +380,7 @@
 			files = (
 				BBF384401BAA784600EDF854 /* LaunchScreen.storyboard in Resources */,
 				BBF3843D1BAA784600EDF854 /* Assets.xcassets in Resources */,
+				BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */,
 				BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,9 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */,
+				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
+				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
+				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
 				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,

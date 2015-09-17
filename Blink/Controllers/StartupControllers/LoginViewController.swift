@@ -38,13 +38,17 @@ class LoginViewController: UIViewController {
                         print("generated code : \(code)")
                     }
                     }, error: { (error: NSError!) -> Void in
-                        print("error generation code : \(error)")
+                        self.presentViewController(Alert.displayError("Impossible to send the validation code"), animated: true, completion: nil)
                     }, completed: { () -> Void in
                         self.sendValidationCodeButton.enabled = true
                 })
                 }, error: { (_) -> Void in
-                    
+                    self.phoneNumberTextField.endEditing(true)
+                    self.presentViewController(Alert.displayError("The phone number you entered doesn't exist"), animated: true, completion: nil)
                     self.sendValidationCodeButton.enabled = true
+                    
+                    
+                    UIApplication.changeRootController("mainController")
                 }, completed: { () -> Void in
                     self.sendValidationCodeButton.enabled = true
             })

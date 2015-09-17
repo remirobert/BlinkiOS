@@ -19,12 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func applicationAppaerence() {
-        let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.shadowImage = UIImage()
-        tabBarAppearance.backgroundImage = UIImage()
-        tabBarAppearance.tintColor = UIColor.whiteColor()
-        tabBarAppearance.backgroundColor = UIColor.whiteColor()
-        
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.shadowImage = UIImage()
         navigationBarAppearance.backgroundColor = UIColor.whiteColor()

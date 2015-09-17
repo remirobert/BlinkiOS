@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="RoomTableViewCell" customModule="Blink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#MuséeDuLouvre" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIj-dx-R8O">
+                        <rect key="frame" x="103" y="13" width="259" height="37"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="259" id="B0S-fu-2i8"/>
+                            <constraint firstAttribute="height" constant="37" id="ff9-Rc-gFP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rue du louvre Paris" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zns-UY-w6d">
+                        <rect key="frame" x="103" y="42" width="259" height="15"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="E5k-yP-PsL"/>
+                            <constraint firstAttribute="width" constant="259" id="GlF-Ta-j1T"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHp-14-Vqx">
+                        <rect key="frame" x="8" y="27" width="59" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="570-8b-ER4"/>
+                            <constraint firstAttribute="height" constant="21" id="8zh-a8-8qU"/>
+                            <constraint firstAttribute="width" constant="59" id="tb8-gY-Zbg"/>
+                            <constraint firstAttribute="height" constant="21" id="vJb-V1-5NV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8zh-a8-8qU"/>
+                                <exclude reference="tb8-gY-Zbg"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="tIj-dx-R8O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="0ud-Dc-ZxL"/>
+                    <constraint firstItem="Zns-UY-w6d" firstAttribute="width" secondItem="tIj-dx-R8O" secondAttribute="width" id="5NK-vQ-A51"/>
+                    <constraint firstItem="Zns-UY-w6d" firstAttribute="top" secondItem="tIj-dx-R8O" secondAttribute="bottom" constant="-8" id="6L1-Kb-Ofs"/>
+                    <constraint firstItem="Zns-UY-w6d" firstAttribute="leading" secondItem="nHp-14-Vqx" secondAttribute="trailing" constant="36" id="C9p-zc-sDV"/>
+                    <constraint firstItem="nHp-14-Vqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JdO-l2-N2a"/>
+                    <constraint firstItem="nHp-14-Vqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gkN-kZ-pGJ"/>
+                    <constraint firstItem="Zns-UY-w6d" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ld2-XQ-ux7"/>
+                    <constraint firstItem="nHp-14-Vqx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="nzs-kn-tV2"/>
+                    <constraint firstItem="tIj-dx-R8O" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="yle-Hc-2fb"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="JdO-l2-N2a"/>
+                        <exclude reference="5NK-vQ-A51"/>
+                        <exclude reference="C9p-zc-sDV"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="detailCell" destination="Zns-UY-w6d" id="I80-FV-MPd"/>
+                <outlet property="numberUsers" destination="nHp-14-Vqx" id="fux-z0-4AJ"/>
+                <outlet property="titleRoom" destination="tIj-dx-R8O" id="MyX-7u-vHP"/>
+            </connections>
+            <point key="canvasLocation" x="366" y="379.5"/>
+        </tableViewCell>
+    </objects>
+</document>

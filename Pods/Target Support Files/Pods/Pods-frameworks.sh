@@ -85,11 +85,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/Masonry.framework"
   install_framework "Pods/Parse.framework"
-  install_framework "Pods/RxSwift.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/Masonry.framework"
   install_framework "Pods/Parse.framework"
-  install_framework "Pods/RxSwift.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
 fi

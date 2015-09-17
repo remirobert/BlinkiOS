@@ -1,5 +1,5 @@
 use_frameworks!
-pod 'RxSwift', '~> 2.0.0-alpha.3'
+pod 'ReactiveCocoa', '~> 4.0.2-alpha-1'
 pod 'Masonry'
 pod 'Parse'
 pod 'TwilioSDK'

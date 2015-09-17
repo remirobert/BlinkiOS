@@ -23,16 +23,31 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         sendValidationCodeButton.enabled = false
-                
-        phoneNumberTextField.rac_textSignal().subscribeNext { (text: AnyObject!) -> Void in
-            if let text = text as? String {
-                self.sendValidationCodeButton.enabled = (count(text) > 0) ? true : false
-                print("text phone number signal : \(text) = \(text.length)")
+        phoneNumberTextField.rac_textSignal().subscribeNext { (next: AnyObject!) -> Void in
+            if let text = next as? String {
+                self.sendValidationCodeButton.enabled = (text.characters.count > 0) ? true : false
             }
         }
-        
-        sendValidationCodeButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).doNext { (_) -> Void in
-            print("send code clicked")
+
+        sendValidationCodeButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            self.sendValidationCodeButton.enabled = false
+            
+            User.findUser(self.phoneNumberTextField.text!).subscribeNext({ (next: AnyObject!) -> Void in
+                Twilio.basicLogin(self.phoneNumberTextField.text!).subscribeNext({ (next: AnyObject!) -> Void in
+                    if let code = next as? String {
+                        print("generated code : \(code)")
+                    }
+                    }, error: { (error: NSError!) -> Void in
+                        print("error generation code : \(error)")
+                    }, completed: { () -> Void in
+                        self.sendValidationCodeButton.enabled = true
+                })
+                }, error: { (_) -> Void in
+                    
+                    self.sendValidationCodeButton.enabled = true
+                }, completed: { () -> Void in
+                    self.sendValidationCodeButton.enabled = true
+            })
         }
     }
 }

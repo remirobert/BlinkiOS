@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498711BAA9794008A8ECF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498731BAA979E008A8ECF /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 		667B62A522C95D039ADDD65B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
 		BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBE498711BAA9794008A8ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE498731BAA979E008A8ECF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB4288CD1BAAA70F00B211F6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BB4288CE1BAAA71800B211F6 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		BB4288D01BAAAA0000B211F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +148,7 @@
 		BBE4986F1BAA7EC7008A8ECF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BB4288CD1BAAA70F00B211F6 /* User */,
 				BBFBE7921BAA9F2D00438AF9 /* Twilio */,
 			);
 			path = API;
@@ -187,6 +205,7 @@
 		BBF384341BAA784600EDF854 /* Blink */ = {
 			isa = PBXGroup;
 			children = (
+				BB4288D01BAAAA0000B211F6 /* Views */,
 				BBE498781BAA98F3008A8ECF /* Extensions */,
 				BBE498701BAA7ECC008A8ECF /* Models */,
 				BBE4986F1BAA7EC7008A8ECF /* API */,
@@ -407,6 +426,7 @@
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
+				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,
 				BBE4987A1BAA990D008A8ECF /* StoryBoard+instanceController.swift in Sources */,
 				BBF384361BAA784600EDF854 /* AppDelegate.swift in Sources */,

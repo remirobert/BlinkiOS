@@ -1,0 +1,22 @@
+PODS:
+  - Bolts/Tasks (1.2.2)
+  - Masonry (0.6.2)
+  - Parse (1.8.4):
+    - Bolts/Tasks (>= 1.2.2)
+  - RxSwift (2.0.0-alpha.3)
+  - TwilioSDK (1.2.5)
+
+DEPENDENCIES:
+  - Masonry
+  - Parse
+  - RxSwift (~> 2.0.0-alpha.3)
+  - TwilioSDK
+
+SPEC CHECKSUMS:
+  Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  Parse: c09d6efe4b2eea752765bc6f365a55516d909079
+  RxSwift: c66f7956b2e5fb397a62bf4a3ec6072749a816a7
+  TwilioSDK: 49ef46cd8bef7f05f1e3bdb003e400d77c675673
+
+COCOAPODS: 0.39.0.beta.4

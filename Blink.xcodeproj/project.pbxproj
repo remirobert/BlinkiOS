@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BBF384361BAA784600EDF854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF384351BAA784600EDF854 /* AppDelegate.swift */; };
+		BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF384391BAA784600EDF854 /* Main.storyboard */; };
+		BBF3843D1BAA784600EDF854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF3843C1BAA784600EDF854 /* Assets.xcassets */; };
+		BBF384401BAA784600EDF854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF3843E1BAA784600EDF854 /* LaunchScreen.storyboard */; };
+		BBF3844B1BAA784600EDF854 /* BlinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3844A1BAA784600EDF854 /* BlinkTests.swift */; };
+		BBF384561BAA784600EDF854 /* BlinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF384551BAA784600EDF854 /* BlinkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBF384471BAA784600EDF854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBF3842A1BAA784600EDF854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBF384311BAA784600EDF854;
+			remoteInfo = Blink;
+		};
+		BBF384521BAA784600EDF854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBF3842A1BAA784600EDF854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBF384311BAA784600EDF854;
+			remoteInfo = Blink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		667B62A522C95D039ADDD65B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BBF384321BAA784600EDF854 /* Blink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF384351BAA784600EDF854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBF3843A1BAA784600EDF854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBF3843C1BAA784600EDF854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBF3843F1BAA784600EDF854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBF384411BAA784600EDF854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF384461BAA784600EDF854 /* BlinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF3844A1BAA784600EDF854 /* BlinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkTests.swift; sourceTree = "<group>"; };
+		BBF3844C1BAA784600EDF854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF384511BAA784600EDF854 /* BlinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF384551BAA784600EDF854 /* BlinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkUITests.swift; sourceTree = "<group>"; };
+		BBF384571BAA784600EDF854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBF3842F1BAA784600EDF854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF384431BAA784600EDF854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF3844E1BAA784600EDF854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05FEE86C91EC3D2D50457E1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */,
+				667B62A522C95D039ADDD65B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA2B3BF9A9581FA6EAB81AA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				738FFFA01E4B5A064AFFC9F5 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BBE4986C1BAA7A10008A8ECF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BBF384391BAA784600EDF854 /* Main.storyboard */,
+				BBF384351BAA784600EDF854 /* AppDelegate.swift */,
+				BBF3843C1BAA784600EDF854 /* Assets.xcassets */,
+				BBF3843E1BAA784600EDF854 /* LaunchScreen.storyboard */,
+				BBF384411BAA784600EDF854 /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		BBF384291BAA784500EDF854 = {
+			isa = PBXGroup;
+			children = (
+				BBF384341BAA784600EDF854 /* Blink */,
+				BBF384491BAA784600EDF854 /* BlinkTests */,
+				BBF384541BAA784600EDF854 /* BlinkUITests */,
+				BBF384331BAA784600EDF854 /* Products */,
+				05FEE86C91EC3D2D50457E1C /* Pods */,
+				BA2B3BF9A9581FA6EAB81AA5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BBF384331BAA784600EDF854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBF384321BAA784600EDF854 /* Blink.app */,
+				BBF384461BAA784600EDF854 /* BlinkTests.xctest */,
+				BBF384511BAA784600EDF854 /* BlinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBF384341BAA784600EDF854 /* Blink */ = {
+			isa = PBXGroup;
+			children = (
+				BBE4986B1BAA7A05008A8ECF /* Controllers */,
+				BBE4986C1BAA7A10008A8ECF /* Application */,
+			);
+			path = Blink;
+			sourceTree = "<group>";
+		};
+		BBF384491BAA784600EDF854 /* BlinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBF3844A1BAA784600EDF854 /* BlinkTests.swift */,
+				BBF3844C1BAA784600EDF854 /* Info.plist */,
+			);
+			path = BlinkTests;
+			sourceTree = "<group>";
+		};
+		BBF384541BAA784600EDF854 /* BlinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBF384551BAA784600EDF854 /* BlinkUITests.swift */,
+				BBF384571BAA784600EDF854 /* Info.plist */,
+			);
+			path = BlinkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBF384311BAA784600EDF854 /* Blink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBF3845A1BAA784600EDF854 /* Build configuration list for PBXNativeTarget "Blink" */;
+			buildPhases = (
+				1F7091E85A85E52803081BDC /* Check Pods Manifest.lock */,
+				BBF3842E1BAA784600EDF854 /* Sources */,
+				BBF3842F1BAA784600EDF854 /* Frameworks */,
+				BBF384301BAA784600EDF854 /* Resources */,
+				E8CCC2740427840A371C0183 /* Embed Pods Frameworks */,
+				21E49581BF82B00FF9BBE069 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blink;
+			productName = Blink;
+			productReference = BBF384321BAA784600EDF854 /* Blink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBF384451BAA784600EDF854 /* BlinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBF3845D1BAA784600EDF854 /* Build configuration list for PBXNativeTarget "BlinkTests" */;
+			buildPhases = (
+				BBF384421BAA784600EDF854 /* Sources */,
+				BBF384431BAA784600EDF854 /* Frameworks */,
+				BBF384441BAA784600EDF854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBF384481BAA784600EDF854 /* PBXTargetDependency */,
+			);
+			name = BlinkTests;
+			productName = BlinkTests;
+			productReference = BBF384461BAA784600EDF854 /* BlinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBF384501BAA784600EDF854 /* BlinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBF384601BAA784600EDF854 /* Build configuration list for PBXNativeTarget "BlinkUITests" */;
+			buildPhases = (
+				BBF3844D1BAA784600EDF854 /* Sources */,
+				BBF3844E1BAA784600EDF854 /* Frameworks */,
+				BBF3844F1BAA784600EDF854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBF384531BAA784600EDF854 /* PBXTargetDependency */,
+			);
+			name = BlinkUITests;
+			productName = BlinkUITests;
+			productReference = BBF384511BAA784600EDF854 /* BlinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBF3842A1BAA784600EDF854 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Remi Robert";
+				TargetAttributes = {
+					BBF384311BAA784600EDF854 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BBF384451BAA784600EDF854 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = BBF384311BAA784600EDF854;
+					};
+					BBF384501BAA784600EDF854 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = BBF384311BAA784600EDF854;
+					};
+				};
+			};
+			buildConfigurationList = BBF3842D1BAA784600EDF854 /* Build configuration list for PBXProject "Blink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBF384291BAA784500EDF854;
+			productRefGroup = BBF384331BAA784600EDF854 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBF384311BAA784600EDF854 /* Blink */,
+				BBF384451BAA784600EDF854 /* BlinkTests */,
+				BBF384501BAA784600EDF854 /* BlinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBF384301BAA784600EDF854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF384401BAA784600EDF854 /* LaunchScreen.storyboard in Resources */,
+				BBF3843D1BAA784600EDF854 /* Assets.xcassets in Resources */,
+				BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF384441BAA784600EDF854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF3844F1BAA784600EDF854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7091E85A85E52803081BDC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		21E49581BF82B00FF9BBE069 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8CCC2740427840A371C0183 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBF3842E1BAA784600EDF854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF384361BAA784600EDF854 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF384421BAA784600EDF854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF3844B1BAA784600EDF854 /* BlinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBF3844D1BAA784600EDF854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF384561BAA784600EDF854 /* BlinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBF384481BAA784600EDF854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBF384311BAA784600EDF854 /* Blink */;
+			targetProxy = BBF384471BAA784600EDF854 /* PBXContainerItemProxy */;
+		};
+		BBF384531BAA784600EDF854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBF384311BAA784600EDF854 /* Blink */;
+			targetProxy = BBF384521BAA784600EDF854 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBF384391BAA784600EDF854 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBF3843A1BAA784600EDF854 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBF3843E1BAA784600EDF854 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBF3843F1BAA784600EDF854 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBF384581BAA784600EDF854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBF384591BAA784600EDF854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBF3845B1BAA784600EDF854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = Blink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BBF3845C1BAA784600EDF854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667B62A522C95D039ADDD65B /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = Blink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BBF3845E1BAA784600EDF854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.BlinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blink.app/Blink";
+			};
+			name = Debug;
+		};
+		BBF3845F1BAA784600EDF854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BlinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.BlinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blink.app/Blink";
+			};
+			name = Release;
+		};
+		BBF384611BAA784600EDF854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.BlinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blink;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BBF384621BAA784600EDF854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BlinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.BlinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blink;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBF3842D1BAA784600EDF854 /* Build configuration list for PBXProject "Blink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF384581BAA784600EDF854 /* Debug */,
+				BBF384591BAA784600EDF854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBF3845A1BAA784600EDF854 /* Build configuration list for PBXNativeTarget "Blink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF3845B1BAA784600EDF854 /* Debug */,
+				BBF3845C1BAA784600EDF854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBF3845D1BAA784600EDF854 /* Build configuration list for PBXNativeTarget "BlinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF3845E1BAA784600EDF854 /* Debug */,
+				BBF3845F1BAA784600EDF854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBF384601BAA784600EDF854 /* Build configuration list for PBXNativeTarget "BlinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF384611BAA784600EDF854 /* Debug */,
+				BBF384621BAA784600EDF854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBF3842A1BAA784600EDF854 /* Project object */;
+}

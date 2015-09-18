@@ -252,6 +252,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nextButton" destination="mcU-ea-3Ee" id="tEc-Fu-Hyn"/>
+                        <outlet property="numberPhoneTextField" destination="hRM-Aq-gAK" id="eNb-uW-zTy"/>
+                        <outlet property="sendValidationCodeButton" destination="ZrJ-rm-7VQ" id="N3l-b9-rg9"/>
+                        <outlet property="validationCodeTextField" destination="m0r-2f-1o9" id="FZn-lu-9fE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xla-kl-8Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,11 @@ import UIKit
 
 class SignupNicknameViewController: UIViewController {
 
+    var numberPhone: String!
+    var codeValidation: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }

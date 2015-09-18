@@ -266,24 +266,26 @@
                         <viewControllerLayoutGuide type="bottom" id="lgG-et-jx6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dl9-LM-MfA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dp-cD-IDQ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4r-M0-ftR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4r-M0-ftR">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="zCW-Qm-AWh"/>
+                                            <constraint firstAttribute="height" constant="30" id="zCW-Qm-AWh">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="39"/>
+                                            </constraint>
                                         </constraints>
+                                        <state key="normal" image="icon-camera"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="zCW-Qm-AWh"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="177" y="7" width="46" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="zCW-Qm-AWh"/>
                                             </mask>
@@ -295,7 +297,9 @@
                                     <constraint firstItem="H4r-M0-ftR" firstAttribute="centerX" secondItem="9Dp-cD-IDQ" secondAttribute="centerX" id="GOe-7I-vKN"/>
                                     <constraint firstAttribute="height" constant="44" id="XFA-uY-nHR"/>
                                     <constraint firstItem="H4r-M0-ftR" firstAttribute="centerY" secondItem="9Dp-cD-IDQ" secondAttribute="centerY" id="dqk-to-D5f"/>
-                                    <constraint firstItem="H4r-M0-ftR" firstAttribute="top" secondItem="9Dp-cD-IDQ" secondAttribute="top" constant="7" id="nF7-lU-qNz"/>
+                                    <constraint firstItem="H4r-M0-ftR" firstAttribute="top" secondItem="9Dp-cD-IDQ" secondAttribute="top" constant="7" id="nF7-lU-qNz">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -332,9 +336,9 @@
                                 <exclude reference="9Dp-cD-IDQ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="RRS-jL-FaA"/>
                                 <exclude reference="2FO-zj-5NI"/>
                                 <exclude reference="I7J-i2-1gE"/>
-                                <exclude reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -342,9 +346,9 @@
                                 <include reference="9Dp-cD-IDQ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="RRS-jL-FaA"/>
                                 <include reference="2FO-zj-5NI"/>
                                 <include reference="I7J-i2-1gE"/>
-                                <include reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                     </view>
@@ -359,6 +363,7 @@
                             </segments>
                             <color key="tintColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="icon-friend" id="U87-4Y-xsr"/>
                     </navigationItem>
                     <connections>
                         <outlet property="newBlinkButton" destination="H4r-M0-ftR" id="8M7-S0-vQC"/>
@@ -708,4 +713,8 @@
             <point key="canvasLocation" x="1660.5" y="1862.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-camera" width="44" height="39"/>
+        <image name="icon-friend" width="16" height="18"/>
+    </resources>
 </document>

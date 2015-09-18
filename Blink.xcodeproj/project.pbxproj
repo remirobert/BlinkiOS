@@ -11,6 +11,7 @@
 		BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
+		BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3251BABF5F1005E6E2C /* Room.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +57,7 @@
 		BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
 		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
 		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
+		BB29D3251BABF5F1005E6E2C /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			name = Textdrawer;
 			sourceTree = "<group>";
 		};
+		BB29D3241BABF5E7005E6E2C /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				BB29D3251BABF5F1005E6E2C /* Room.swift */,
+			);
+			name = Room;
+			sourceTree = "<group>";
+		};
 		BB4288CD1BAAA70F00B211F6 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 		BBE4986F1BAA7EC7008A8ECF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BB29D3241BABF5E7005E6E2C /* Room */,
 				BB4288CD1BAAA70F00B211F6 /* User */,
 				BBFBE7921BAA9F2D00438AF9 /* Twilio */,
 			);
@@ -477,6 +488,7 @@
 				BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */,
 				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
+				BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */,
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,

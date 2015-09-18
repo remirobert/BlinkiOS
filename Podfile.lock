@@ -1,6 +1,10 @@
 PODS:
   - Bolts/Tasks (1.2.2)
+  - ChameleonFramework (1.2.1):
+    - ChameleonFramework/Default (= 1.2.1)
+  - ChameleonFramework/Default (1.2.1)
   - Masonry (0.6.2)
+  - MBProgressHUD (0.9.1)
   - Parse (1.8.4):
     - Bolts/Tasks (>= 1.2.2)
   - PBJVision (0.4.2)
@@ -19,7 +23,9 @@ PODS:
   - TwilioSDK (1.2.5)
 
 DEPENDENCIES:
+  - ChameleonFramework
   - Masonry
+  - MBProgressHUD (~> 0.9.1)
   - Parse
   - PBJVision
   - ReactiveCocoa (~> 4.0.2-alpha-1)
@@ -27,7 +33,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  ChameleonFramework: 3476f813ac1615aef0a9a958f05520dfca47e09d
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: c09d6efe4b2eea752765bc6f365a55516d909079
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
   ReactiveCocoa: 652cf90e5de65708e7e2111f77405756da21aabe

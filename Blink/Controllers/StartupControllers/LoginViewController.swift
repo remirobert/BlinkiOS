@@ -19,6 +19,16 @@ class LoginViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func logUser() {
+        User.loginUser(phoneNumberTextField.text!).subscribeNext({ (_) -> Void in
+            
+            }, error: { (_) -> Void in
+                
+            }) { () -> Void in
+                
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

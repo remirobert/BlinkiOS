@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */; settings = {ASSET_TAGS = (); }; };
+		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
+		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DE1BAAC67700B211F6 /* Progress.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498711BAA9794008A8ECF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498731BAA979E008A8ECF /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -49,12 +53,16 @@
 		667B62A522C95D039ADDD65B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
+		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
+		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
 		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
 		BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
+		BB4288DE1BAAC67700B211F6 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBE498711BAA9794008A8ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE498731BAA979E008A8ECF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB29D31D1BABF3DE005E6E2C /* Textdrawer */ = {
+			isa = PBXGroup;
+			children = (
+				BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */,
+				BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */,
+				BB29D3201BABF3E9005E6E2C /* TextEditView.swift */,
+			);
+			name = Textdrawer;
+			sourceTree = "<group>";
+		};
 		BB4288CD1BAAA70F00B211F6 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		BB4288D01BAAAA0000B211F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB29D31D1BABF3DE005E6E2C /* Textdrawer */,
 				BB4288D91BAABA6900B211F6 /* Cells */,
 				BB4288D81BAABA0D00B211F6 /* ViewsHelpers */,
 			);
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4288D11BAAABA700B211F6 /* Alert.swift */,
+				BB4288DE1BAAC67700B211F6 /* Progress.swift */,
 			);
 			path = ViewsHelpers;
 			sourceTree = "<group>";
@@ -457,11 +477,15 @@
 				BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */,
 				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
+				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
+				BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */,
 				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
 				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
+				BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */,
+				BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */,
 				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,
 				BBE4987A1BAA990D008A8ECF /* StoryBoard+instanceController.swift in Sources */,

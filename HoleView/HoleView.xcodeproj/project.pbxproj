@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB4288ED1BAB0E1800B211F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288EC1BAB0E1800B211F6 /* AppDelegate.swift */; };
+		BB4288EF1BAB0E1800B211F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288EE1BAB0E1800B211F6 /* ViewController.swift */; };
+		BB4288F21BAB0E1800B211F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4288F01BAB0E1800B211F6 /* Main.storyboard */; };
+		BB4288F41BAB0E1800B211F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4288F31BAB0E1800B211F6 /* Assets.xcassets */; };
+		BB4288F71BAB0E1800B211F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4288F51BAB0E1800B211F6 /* LaunchScreen.storyboard */; };
+		BB4289021BAB0E1800B211F6 /* HoleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4289011BAB0E1800B211F6 /* HoleViewTests.swift */; };
+		BB42890D1BAB0E1800B211F6 /* HoleViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42890C1BAB0E1800B211F6 /* HoleViewUITests.swift */; };
+		BB42891B1BAB107E00B211F6 /* HoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42891A1BAB107E00B211F6 /* HoleView.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB4288FE1BAB0E1800B211F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB4288E11BAB0E1800B211F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4288E81BAB0E1800B211F6;
+			remoteInfo = HoleView;
+		};
+		BB4289091BAB0E1800B211F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB4288E11BAB0E1800B211F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4288E81BAB0E1800B211F6;
+			remoteInfo = HoleView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB4288E91BAB0E1800B211F6 /* HoleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4288EC1BAB0E1800B211F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB4288EE1BAB0E1800B211F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB4288F11BAB0E1800B211F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB4288F31BAB0E1800B211F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB4288F61BAB0E1800B211F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB4288F81BAB0E1800B211F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4288FD1BAB0E1800B211F6 /* HoleViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoleViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4289011BAB0E1800B211F6 /* HoleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleViewTests.swift; sourceTree = "<group>"; };
+		BB4289031BAB0E1800B211F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4289081BAB0E1800B211F6 /* HoleViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoleViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB42890C1BAB0E1800B211F6 /* HoleViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleViewUITests.swift; sourceTree = "<group>"; };
+		BB42890E1BAB0E1800B211F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB42891A1BAB107E00B211F6 /* HoleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB4288E61BAB0E1800B211F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4288FA1BAB0E1800B211F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4289051BAB0E1800B211F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB4288E01BAB0E1800B211F6 = {
+			isa = PBXGroup;
+			children = (
+				BB4288EB1BAB0E1800B211F6 /* HoleView */,
+				BB4289001BAB0E1800B211F6 /* HoleViewTests */,
+				BB42890B1BAB0E1800B211F6 /* HoleViewUITests */,
+				BB4288EA1BAB0E1800B211F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB4288EA1BAB0E1800B211F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB4288E91BAB0E1800B211F6 /* HoleView.app */,
+				BB4288FD1BAB0E1800B211F6 /* HoleViewTests.xctest */,
+				BB4289081BAB0E1800B211F6 /* HoleViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB4288EB1BAB0E1800B211F6 /* HoleView */ = {
+			isa = PBXGroup;
+			children = (
+				BB4288EC1BAB0E1800B211F6 /* AppDelegate.swift */,
+				BB4288EE1BAB0E1800B211F6 /* ViewController.swift */,
+				BB42891A1BAB107E00B211F6 /* HoleView.swift */,
+				BB4288F01BAB0E1800B211F6 /* Main.storyboard */,
+				BB4288F31BAB0E1800B211F6 /* Assets.xcassets */,
+				BB4288F51BAB0E1800B211F6 /* LaunchScreen.storyboard */,
+				BB4288F81BAB0E1800B211F6 /* Info.plist */,
+			);
+			path = HoleView;
+			sourceTree = "<group>";
+		};
+		BB4289001BAB0E1800B211F6 /* HoleViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB4289011BAB0E1800B211F6 /* HoleViewTests.swift */,
+				BB4289031BAB0E1800B211F6 /* Info.plist */,
+			);
+			path = HoleViewTests;
+			sourceTree = "<group>";
+		};
+		BB42890B1BAB0E1800B211F6 /* HoleViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB42890C1BAB0E1800B211F6 /* HoleViewUITests.swift */,
+				BB42890E1BAB0E1800B211F6 /* Info.plist */,
+			);
+			path = HoleViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB4288E81BAB0E1800B211F6 /* HoleView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4289111BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleView" */;
+			buildPhases = (
+				BB4288E51BAB0E1800B211F6 /* Sources */,
+				BB4288E61BAB0E1800B211F6 /* Frameworks */,
+				BB4288E71BAB0E1800B211F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoleView;
+			productName = HoleView;
+			productReference = BB4288E91BAB0E1800B211F6 /* HoleView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB4288FC1BAB0E1800B211F6 /* HoleViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4289141BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleViewTests" */;
+			buildPhases = (
+				BB4288F91BAB0E1800B211F6 /* Sources */,
+				BB4288FA1BAB0E1800B211F6 /* Frameworks */,
+				BB4288FB1BAB0E1800B211F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB4288FF1BAB0E1800B211F6 /* PBXTargetDependency */,
+			);
+			name = HoleViewTests;
+			productName = HoleViewTests;
+			productReference = BB4288FD1BAB0E1800B211F6 /* HoleViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB4289071BAB0E1800B211F6 /* HoleViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4289171BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleViewUITests" */;
+			buildPhases = (
+				BB4289041BAB0E1800B211F6 /* Sources */,
+				BB4289051BAB0E1800B211F6 /* Frameworks */,
+				BB4289061BAB0E1800B211F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB42890A1BAB0E1800B211F6 /* PBXTargetDependency */,
+			);
+			name = HoleViewUITests;
+			productName = HoleViewUITests;
+			productReference = BB4289081BAB0E1800B211F6 /* HoleViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB4288E11BAB0E1800B211F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Remi Robert";
+				TargetAttributes = {
+					BB4288E81BAB0E1800B211F6 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BB4288FC1BAB0E1800B211F6 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = BB4288E81BAB0E1800B211F6;
+					};
+					BB4289071BAB0E1800B211F6 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = BB4288E81BAB0E1800B211F6;
+					};
+				};
+			};
+			buildConfigurationList = BB4288E41BAB0E1800B211F6 /* Build configuration list for PBXProject "HoleView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB4288E01BAB0E1800B211F6;
+			productRefGroup = BB4288EA1BAB0E1800B211F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB4288E81BAB0E1800B211F6 /* HoleView */,
+				BB4288FC1BAB0E1800B211F6 /* HoleViewTests */,
+				BB4289071BAB0E1800B211F6 /* HoleViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB4288E71BAB0E1800B211F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4288F71BAB0E1800B211F6 /* LaunchScreen.storyboard in Resources */,
+				BB4288F41BAB0E1800B211F6 /* Assets.xcassets in Resources */,
+				BB4288F21BAB0E1800B211F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4288FB1BAB0E1800B211F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4289061BAB0E1800B211F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB4288E51BAB0E1800B211F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4288EF1BAB0E1800B211F6 /* ViewController.swift in Sources */,
+				BB4288ED1BAB0E1800B211F6 /* AppDelegate.swift in Sources */,
+				BB42891B1BAB107E00B211F6 /* HoleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4288F91BAB0E1800B211F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4289021BAB0E1800B211F6 /* HoleViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4289041BAB0E1800B211F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB42890D1BAB0E1800B211F6 /* HoleViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB4288FF1BAB0E1800B211F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB4288E81BAB0E1800B211F6 /* HoleView */;
+			targetProxy = BB4288FE1BAB0E1800B211F6 /* PBXContainerItemProxy */;
+		};
+		BB42890A1BAB0E1800B211F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB4288E81BAB0E1800B211F6 /* HoleView */;
+			targetProxy = BB4289091BAB0E1800B211F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB4288F01BAB0E1800B211F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB4288F11BAB0E1800B211F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB4288F51BAB0E1800B211F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB4288F61BAB0E1800B211F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB42890F1BAB0E1800B211F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB4289101BAB0E1800B211F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB4289121BAB0E1800B211F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HoleView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BB4289131BAB0E1800B211F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HoleView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BB4289151BAB0E1800B211F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HoleViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoleView.app/HoleView";
+			};
+			name = Debug;
+		};
+		BB4289161BAB0E1800B211F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HoleViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoleView.app/HoleView";
+			};
+			name = Release;
+		};
+		BB4289181BAB0E1800B211F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HoleViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HoleView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BB4289191BAB0E1800B211F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HoleViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = remirobert.HoleViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HoleView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB4288E41BAB0E1800B211F6 /* Build configuration list for PBXProject "HoleView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB42890F1BAB0E1800B211F6 /* Debug */,
+				BB4289101BAB0E1800B211F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB4289111BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4289121BAB0E1800B211F6 /* Debug */,
+				BB4289131BAB0E1800B211F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB4289141BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4289151BAB0E1800B211F6 /* Debug */,
+				BB4289161BAB0E1800B211F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB4289171BAB0E1800B211F6 /* Build configuration list for PBXNativeTarget "HoleViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4289181BAB0E1800B211F6 /* Debug */,
+				BB4289191BAB0E1800B211F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB4288E11BAB0E1800B211F6 /* Project object */;
+}

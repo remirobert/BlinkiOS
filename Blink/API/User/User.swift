@@ -12,17 +12,44 @@ import ReactiveCocoa
 
 class User {
 
+    class func checkNicknameUser(nickname: String) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            
+            let querry = PFUser.query()
+            
+            querry?.whereKey("trueUsername", equalTo: nickname)
+            querry?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
+                if error != nil {
+                    subscriber.sendError(error)
+                    return
+                }
+                if let _ = results {
+                    subscriber.sendNext(true)
+                }
+                else {
+                    subscriber.sendNext(false)
+                }
+                subscriber.sendCompleted()
+            })
+            return nil
+        })
+    }
+    
     class func findUser(phoneNumber: String) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             let querry = PFUser.query()
-            querry?.whereKey("phoneNumber", equalTo: phoneNumber)
             
-            querry?.getFirstObjectInBackgroundWithBlock({ (object: PFObject?, error: NSError?) -> Void in
-                if let user = object where error == nil {
-                    subscriber.sendNext(user)
+            querry?.whereKey("phoneNumber", equalTo: phoneNumber)
+            querry?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
+                if error != nil {
+                    subscriber.sendError(error)
+                    return
+                }
+                if let _ = results {
+                    subscriber.sendNext(true)
                 }
                 else {
-                    subscriber.sendError(error)
+                    subscriber.sendNext(false)
                 }
                 subscriber.sendCompleted()
             })
@@ -38,10 +65,9 @@ class User {
             newUser.setValue(phoneNumber, forKey: "username")
             newUser.setValue(username, forKey: "trueUsername")
             newUser.setValue(phoneNumber, forKey: "password")
-            
             newUser.signUpInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                if success && error == nil {
-                    subscriber.sendNext(true)
+                if error == nil {
+                    subscriber.sendNext(success)
                 }
                 else {
                     subscriber.sendError(error)

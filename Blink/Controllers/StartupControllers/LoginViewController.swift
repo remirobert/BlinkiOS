@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var codeValidationTextField: UITextField!
     @IBOutlet var sendValidationCodeButton: UIButton!
+    @IBOutlet var loginButton: UIButton!
+    var code: String?
     
     @IBAction func cancelLogin(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -22,8 +24,10 @@ class LoginViewController: UIViewController {
     func logUser() {
         User.loginUser(phoneNumberTextField.text!).subscribeNext({ (_) -> Void in
             
+            UIApplication.changeRootController("mainController")
+
             }, error: { (_) -> Void in
-                
+                self.presentViewController(Alert.displayError("Impossible to login"), animated: true, completion: nil)
             }) { () -> Void in
                 
         }
@@ -32,6 +36,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        phoneNumberTextField.text = "+8613162195325"
         sendValidationCodeButton.enabled = false
         phoneNumberTextField.rac_textSignal().subscribeNext { (next: AnyObject!) -> Void in
             if let text = next as? String {
@@ -41,27 +46,37 @@ class LoginViewController: UIViewController {
 
         sendValidationCodeButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
             self.sendValidationCodeButton.enabled = false
+            self.codeValidationTextField.enabled = false
             
             User.findUser(self.phoneNumberTextField.text!).subscribeNext({ (next: AnyObject!) -> Void in
-                Twilio.basicLogin(self.phoneNumberTextField.text!).subscribeNext({ (next: AnyObject!) -> Void in
-                    if let code = next as? String {
-                        print("generated code : \(code)")
-                    }
-                    }, error: { (error: NSError!) -> Void in
-                        self.presentViewController(Alert.displayError("Impossible to send the validation code"), animated: true, completion: nil)
-                    }, completed: { () -> Void in
-                        self.sendValidationCodeButton.enabled = true
-                })
-                }, error: { (_) -> Void in
-                    self.phoneNumberTextField.endEditing(true)
-                    self.presentViewController(Alert.displayError("The phone number you entered doesn't exist"), animated: true, completion: nil)
-                    self.sendValidationCodeButton.enabled = true
+                
+                if let exist = next as? Int where exist == 1 {
+                    Twilio.basicAuth(self.phoneNumberTextField.text!).subscribeNext({ (next: AnyObject!) -> Void in
+                        if let code = next as? Int {
+                            print("ativation code : \(code)")
+                            self.code = "\(code)"
+                            self.sendValidationCodeButton.enabled = true
+                            self.codeValidationTextField.enabled = true
+                            self.codeValidationTextField.alpha = 1
+                            return
+                        }
+                        }, error: { (error: NSError!) -> Void in
+                            return
+                    })
                     
-                    
-                    UIApplication.changeRootController("mainController")
+                }
+
+                }, error: { (error: NSError!) -> Void in
+                    print(error)
                 }, completed: { () -> Void in
                     self.sendValidationCodeButton.enabled = true
             })
+        }
+        
+        loginButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            if self.codeValidationTextField.text == self.code {
+                self.logUser()
+            }
         }
     }
 }

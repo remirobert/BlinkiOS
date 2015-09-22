@@ -12,7 +12,7 @@ import ReactiveCocoa
 
 class Twilio {
 
-    class func createTwilioSignal(phoneNumber: String, cloudFunction: String) -> RACSignal {
+    private class func createTwilioSignal(phoneNumber: String, cloudFunction: String) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             
             let param = NSMutableDictionary()
@@ -21,15 +21,15 @@ class Twilio {
             PFCloud.callFunctionInBackground(cloudFunction,
                 withParameters: param as [NSObject : AnyObject],
                 block: { (response: AnyObject?, error: NSError?) -> Void in
-                    if let response = response as? PFObject where error == nil {
+                    if let response = response as? NSDictionary where error == nil {
                         if let code = response["code"] as? Int {
                             subscriber.sendNext(code)
                             subscriber.sendCompleted()
-                            return
                         }
                     }
-                    subscriber.sendError(error)
-                    subscriber.sendCompleted()
+                    else {
+                        subscriber.sendError(error)
+                    }
             })
             return nil
         })

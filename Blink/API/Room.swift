@@ -21,8 +21,17 @@ class Room {
             querryParticipant.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
                 if let participants = results where error == nil {
                     let rooms = participants.flatMap { ($0["room"]) }
-                    subscriber.sendNext(rooms)
-                    subscriber.sendCompleted()
+                    
+                    PFObject.fetchAllIfNeededInBackground(rooms, block: { (fetchedResults: [AnyObject]?, error: NSError?) -> Void in
+
+                        if let fetchedRooms = fetchedResults where error == nil {
+                            subscriber.sendNext(fetchedRooms)
+                            subscriber.sendCompleted()
+                        }
+                        else {
+                            subscriber.sendError(error)
+                        }
+                    })
                 }
                 else {
                     subscriber.sendError(error)

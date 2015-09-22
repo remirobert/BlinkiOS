@@ -19,6 +19,10 @@
 		BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DE1BAAC67700B211F6 /* Progress.swift */; settings = {ASSET_TAGS = (); }; };
+		BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103591BB0448100C31028 /* InputTextfield.swift */; settings = {ASSET_TAGS = (); }; };
+		BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71035E1BB0610700C31028 /* FriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB7103611BB0616A00C31028 /* SearchFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB7103631BB0621100C31028 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103621BB0621100C31028 /* Friend.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498711BAA9794008A8ECF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498731BAA979E008A8ECF /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -65,6 +69,10 @@
 		BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
 		BB4288DE1BAAC67700B211F6 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		BB7103591BB0448100C31028 /* InputTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextfield.swift; sourceTree = "<group>"; };
+		BB71035E1BB0610700C31028 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendsViewController.swift; sourceTree = "<group>"; };
+		BB7103621BB0621100C31028 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBE498711BAA9794008A8ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE498731BAA979E008A8ECF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4288CE1BAAA71800B211F6 /* User.swift */,
+				BB7103621BB0621100C31028 /* Friend.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 				BB29D31D1BABF3DE005E6E2C /* Textdrawer */,
 				BB4288D91BAABA6900B211F6 /* Cells */,
 				BB4288D81BAABA0D00B211F6 /* ViewsHelpers */,
+				BB7103591BB0448100C31028 /* InputTextfield.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,9 +193,36 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		BB71035B1BB0499100C31028 /* Singup */ = {
+			isa = PBXGroup;
+			children = (
+				BBE498731BAA979E008A8ECF /* SignupViewController.swift */,
+				BBE498761BAA97CD008A8ECF /* SignupNicknameViewController.swift */,
+			);
+			name = Singup;
+			sourceTree = "<group>";
+		};
+		BB71035C1BB0499800C31028 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BBE498711BAA9794008A8ECF /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		BB71035D1BB060E100C31028 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				BB71035E1BB0610700C31028 /* FriendsViewController.swift */,
+				BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
 		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB71035D1BB060E100C31028 /* Friends */,
 				BBE498751BAA97A2008A8ECF /* StartupControllers */,
 				BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */,
 			);
@@ -226,9 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */,
-				BBE498711BAA9794008A8ECF /* LoginViewController.swift */,
-				BBE498731BAA979E008A8ECF /* SignupViewController.swift */,
-				BBE498761BAA97CD008A8ECF /* SignupNicknameViewController.swift */,
+				BB71035C1BB0499800C31028 /* Login */,
+				BB71035B1BB0499100C31028 /* Singup */,
 			);
 			path = StartupControllers;
 			sourceTree = "<group>";
@@ -493,10 +529,14 @@
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
 				BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */,
+				BB7103611BB0616A00C31028 /* SearchFriendsViewController.swift in Sources */,
+				BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */,
 				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
 				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
 				BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */,
+				BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */,
+				BB7103631BB0621100C31028 /* Friend.swift in Sources */,
 				BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */,
 				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,
@@ -646,6 +686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Blink/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Blink/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -23,11 +23,13 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.characters.count < 3 {
+        if searchText.characters.count < 2 {
             return
         }
         
-        Friend.searchFriends(searchText).subscribeNext({ (next: AnyObject!) -> Void in
+        let searchSignal = Friend.searchFriends(searchText)
+        
+        searchSignal.subscribeNext({ (next: AnyObject!) -> Void in
             self.resultSearch.removeAll()
             if let users = next as? [PFObject] {
                 print(users)

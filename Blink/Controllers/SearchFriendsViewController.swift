@@ -23,12 +23,14 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        print("search string : \(searchText)")
+        if searchText.characters.count < 3 {
+            return
+        }
         
         Friend.searchFriends(searchText).subscribeNext({ (next: AnyObject!) -> Void in
-
             self.resultSearch.removeAll()
             if let users = next as? [PFObject] {
+                print(users)
                 self.resultSearch = users
                 self.tableView.reloadData()
             }
@@ -36,7 +38,6 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
             }, error: { (error: NSError!) -> Void in
                 
             }) { () -> Void in
-                
         }
     }
     
@@ -59,6 +60,7 @@ extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchCell") as! SearchUserTableViewCell
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.initCellForUser(resultSearch[indexPath.row])
         return cell
     }

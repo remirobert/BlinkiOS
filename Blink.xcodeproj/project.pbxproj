@@ -14,6 +14,7 @@
 		BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3251BABF5F1005E6E2C /* Room.swift */; settings = {ASSET_TAGS = (); }; };
 		BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBE31BB13B44005343B3 /* SearchUserTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BB2BCBE61BB13B44005343B3 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		BB2BCBE91BB15AB7005343B3 /* WaitBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -66,6 +67,7 @@
 		BB29D3251BABF5F1005E6E2C /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BB2BCBE31BB13B44005343B3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
+		BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitBlock.swift; sourceTree = "<group>"; };
 		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 				BB29D3251BABF5F1005E6E2C /* Room.swift */,
 			);
 			name = Room;
+			sourceTree = "<group>";
+		};
+		BB2BCBE71BB15AAC005343B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		BB4288CD1BAAA70F00B211F6 /* User */ = {
@@ -309,6 +319,7 @@
 		BBF384341BAA784600EDF854 /* Blink */ = {
 			isa = PBXGroup;
 			children = (
+				BB2BCBE71BB15AAC005343B3 /* Utils */,
 				BB4288D01BAAAA0000B211F6 /* Views */,
 				BBE498781BAA98F3008A8ECF /* Extensions */,
 				BBE498701BAA7ECC008A8ECF /* Models */,
@@ -533,6 +544,7 @@
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
 				BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */,
 				BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */,
+				BB2BCBE91BB15AB7005343B3 /* WaitBlock.swift in Sources */,
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,

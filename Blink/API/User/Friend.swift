@@ -11,6 +11,25 @@ import Parse
 import ReactiveCocoa
 
 class Friend {
+    
+    class func isFriend(friend: PFObject) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+
+            self.friends(PFCachePolicy.CacheElseNetwork).subscribeNext({ (next: AnyObject!) -> Void in
+                
+                if let friends = next as? [PFObject] {
+                    
+                }
+                
+                }, error: { (error: NSError!) -> Void in
+                    
+                }, completed: { () -> Void in
+                    
+            })
+            
+            return nil
+        })
+    }
 
     class func searchFriends(searchString: String) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
@@ -45,7 +64,7 @@ class Friend {
         })
     }
     
-    class func friends() -> RACSignal {
+    class func friends(cachePolicy: PFCachePolicy = PFCachePolicy.CacheThenNetwork) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             
             let currentUser = PFUser.currentUser()
@@ -54,13 +73,25 @@ class Friend {
 
             querryFriendsRelation?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
                 if let friends = results where error == nil {
-                    subscriber.sendNext(friends)
+                    PFObject.fetchAllIfNeededInBackground(friends, block: { (fetchedResults: [AnyObject]?, error: NSError?) -> Void in
+                        if error != nil {
+                            subscriber.sendError(error)
+                        }
+                        else {
+                            if let fetchedFriends = fetchedResults as? [PFObject] {
+                                subscriber.sendNext(fetchedFriends)
+                                subscriber.sendCompleted()
+                            }
+                            else {
+                                subscriber.sendError(error)
+                            }
+                        }
+                    })
                 }
                 else {
                     subscriber.sendError(error)
                     return
                 }
-                subscriber.sendCompleted()
             })
             return nil
         })

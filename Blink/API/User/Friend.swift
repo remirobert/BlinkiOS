@@ -18,13 +18,19 @@ class Friend {
             self.friends(PFCachePolicy.CacheElseNetwork).subscribeNext({ (next: AnyObject!) -> Void in
                 
                 if let friends = next as? [PFObject] {
-                    
+                    if friends.contains(friend) {
+                        subscriber.sendNext(true)
+                    }
                 }
+                subscriber.sendNext(false)
+                subscriber.sendCompleted()
                 
                 }, error: { (error: NSError!) -> Void in
+
+                    subscriber.sendError(error)
                     
                 }, completed: { () -> Void in
-                    
+                    subscriber.sendCompleted()
             })
             
             return nil

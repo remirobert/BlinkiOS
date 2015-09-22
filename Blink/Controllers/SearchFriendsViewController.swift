@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
+import ReactiveCocoa
 
 class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    var resultSearch = Array<PFObject>()
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         print("cancel button")
@@ -19,10 +22,44 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
         searchBar.endEditing(true)
     }
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        print("search string : \(searchText)")
+        
+        Friend.searchFriends(searchText).subscribeNext({ (next: AnyObject!) -> Void in
+
+            self.resultSearch.removeAll()
+            if let users = next as? [PFObject] {
+                self.resultSearch = users
+                self.tableView.reloadData()
+            }
+            
+            }, error: { (error: NSError!) -> Void in
+                
+            }) { () -> Void in
+                
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
+        tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.registerNib(UINib(nibName: "SearchUserTableViewCell", bundle: nil), forCellReuseIdentifier: "searchCell")
+    }
+}
+
+extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.resultSearch.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("searchCell") as! SearchUserTableViewCell
+        
+        cell.initCellForUser(resultSearch[indexPath.row])
+        return cell
     }
 }

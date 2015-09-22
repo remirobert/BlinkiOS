@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="KGk-i7-Jjw" customClass="SearchUserTableViewCell" customModule="Blink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="482" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="482" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MD5-1s-sKo">
+                        <rect key="frame" x="65" y="11" width="409" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="yPg-pd-3J7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWO-3c-nMR">
+                        <rect key="frame" x="8" y="6" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="1kP-yT-7hN"/>
+                            <constraint firstAttribute="width" constant="49" id="Mt2-T8-d1Z"/>
+                        </constraints>
+                        <color key="onTintColor" red="0.99215686270000003" green="0.36078431370000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MD5-1s-sKo" firstAttribute="leading" secondItem="lWO-3c-nMR" secondAttribute="trailing" constant="8" id="A31-28-cJT"/>
+                    <constraint firstItem="lWO-3c-nMR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N1l-n7-uaw"/>
+                    <constraint firstItem="lWO-3c-nMR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="O3d-Yy-Oi6"/>
+                    <constraint firstItem="MD5-1s-sKo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f2d-ks-8nG"/>
+                    <constraint firstItem="MD5-1s-sKo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fSv-85-7nl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelUsername" destination="MD5-1s-sKo" id="MQX-OJ-ZJv"/>
+                <outlet property="switchFriend" destination="lWO-3c-nMR" id="drI-Wg-yiX"/>
+            </connections>
+            <point key="canvasLocation" x="375" y="266"/>
+        </tableViewCell>
+    </objects>
+</document>

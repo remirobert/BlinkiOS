@@ -12,6 +12,8 @@
 		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3251BABF5F1005E6E2C /* Room.swift */; settings = {ASSET_TAGS = (); }; };
+		BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBE31BB13B44005343B3 /* SearchUserTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BB2BCBE61BB13B44005343B3 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -62,6 +64,8 @@
 		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
 		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
 		BB29D3251BABF5F1005E6E2C /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		BB2BCBE31BB13B44005343B3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
+		BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
 		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */,
 				BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */,
+				BB2BCBE31BB13B44005343B3 /* SearchUserTableViewCell.swift */,
+				BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			files = (
 				BBF384401BAA784600EDF854 /* LaunchScreen.storyboard in Resources */,
 				BBF3843D1BAA784600EDF854 /* Assets.xcassets in Resources */,
+				BB2BCBE61BB13B44005343B3 /* SearchUserTableViewCell.xib in Resources */,
 				BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */,
 				BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */,
 			);
@@ -525,6 +532,7 @@
 				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
 				BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */,
+				BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */,
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,

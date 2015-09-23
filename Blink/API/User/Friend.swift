@@ -12,7 +12,24 @@ import ReactiveCocoa
 
 class Friend {
     
-    class func removeFriend(friend: PFObject) -> RACSignalsign
+    class func removeFriend(friend: PFObject) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            
+            let friendsRelation = PFUser.currentUser()?.relationForKey("friends")
+            friendsRelation?.removeObject(friend)
+            
+            PFUser.currentUser()?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                if success && error == nil {
+                    subscriber.sendNext(true)
+                }
+                else {
+                    subscriber.sendError(error)
+                }
+                subscriber.sendCompleted()
+            })
+            return nil
+        })
+    }
     
     
     class func addFriend(friend: PFObject) -> RACSignal {

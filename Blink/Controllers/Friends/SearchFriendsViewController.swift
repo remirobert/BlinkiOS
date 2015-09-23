@@ -74,8 +74,9 @@ extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchCell") as! SearchUserTableViewCell
         
+        let isFriend = Friend.isFriend(resultSearch[indexPath.row], friends: currentFriends)
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.initCellForUser(resultSearch[indexPath.row])
+        cell.initCellForUser(resultSearch[indexPath.row], isFriend: isFriend)
         return cell
     }
 }

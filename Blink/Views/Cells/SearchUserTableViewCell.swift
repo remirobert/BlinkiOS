@@ -14,8 +14,8 @@ class SearchUserTableViewCell: UITableViewCell {
     @IBOutlet var switchFriend: UISwitch!
     @IBOutlet var labelUsername: UILabel!
 
-    func initCellForUser(currentUser: PFObject) {
-        switchFriend.on = false
+    func initCellForUser(currentUser: PFObject, isFriend: Bool) {
+        switchFriend.on = isFriend
         labelUsername.text = nil
         if let username = currentUser["trueUsername"] as? String {
             labelUsername.text = username

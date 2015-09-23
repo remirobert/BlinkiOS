@@ -12,29 +12,35 @@ import ReactiveCocoa
 
 class Friend {
     
-    class func isFriend(friend: PFObject) -> RACSignal {
+    class func removeFriend(friend: PFObject) -> RACSignalsign
+    
+    
+    class func addFriend(friend: PFObject) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
-
-            self.friends(PFCachePolicy.CacheElseNetwork).subscribeNext({ (next: AnyObject!) -> Void in
-                
-                if let friends = next as? [PFObject] {
-                    if friends.contains(friend) {
-                        subscriber.sendNext(true)
-                    }
-                }
-                subscriber.sendNext(false)
-                subscriber.sendCompleted()
-                
-                }, error: { (error: NSError!) -> Void in
-
-                    subscriber.sendError(error)
-                    
-                }, completed: { () -> Void in
-                    subscriber.sendCompleted()
-            })
             
+            let friendsRelation = PFUser.currentUser()?.relationForKey("friends")
+            friendsRelation?.addObject(friend)
+            
+            PFUser.currentUser()?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                if success && error == nil {
+                   subscriber.sendNext(true)
+                }
+                else {
+                    subscriber.sendError(error)
+                }
+                subscriber.sendCompleted()
+            })
             return nil
         })
+    }
+    
+    class func isFriend(friend: PFObject, friends: [PFObject]) -> Bool {
+        if friends.contains(friend) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     class func searchFriends(searchString: String) -> RACSignal {

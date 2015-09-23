@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "wizzem_dev"
+    },
+    "wizzem_dev": {
+      "applicationId": "P2PJVDbhrj37sCtIhVdKvrzrQwq5jFYEIAYsoDfb"
+    }
+  }
+}

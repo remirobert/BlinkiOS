@@ -15,9 +15,9 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var resultSearch = Array<PFObject>()
+    var currentFriends = Array<PFObject>()
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        print("cancel button")
         searchBar.text = nil
         searchBar.endEditing(true)
     }
@@ -46,8 +46,20 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Friend.friends().subscribeNext({ (next: AnyObject!) -> Void in
+            
+            if let friendsList = next as? [PFObject] {
+                self.currentFriends = friendsList
+                self.tableView.dataSource = self
+            }
+            
+            }, error: { (error: NSError!) -> Void in
+                
+            }) { () -> Void in
+                self.tableView.reloadData()
+        }
+        
         searchBar.delegate = self
-        tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.registerNib(UINib(nibName: "SearchUserTableViewCell", bundle: nil), forCellReuseIdentifier: "searchCell")
     }

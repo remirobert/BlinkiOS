@@ -23,6 +23,7 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         if let searchString = searchBar.text {
             searchFriend(searchString)
         }

@@ -19,8 +19,8 @@ class FriendsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func fetchData() {
-        Friend.friends(.NetworkOnly).subscribeNext({ (next: AnyObject!) -> Void in
+    func fetchData(cachePolicy: PFCachePolicy = PFCachePolicy.NetworkOnly) {
+        Friend.friends(cachePolicy).subscribeNext({ (next: AnyObject!) -> Void in
             
             self.friends.removeAll()
             if let users = next as? [PFUser] {
@@ -34,7 +34,7 @@ class FriendsViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        fetchData()
+        fetchData(.CacheThenNetwork)
     }
     
     override func viewDidLoad() {

@@ -31,7 +31,6 @@ class Friend {
         })
     }
     
-    
     class func addFriend(friend: PFObject) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             
@@ -52,12 +51,12 @@ class Friend {
     }
     
     class func isFriend(friend: PFObject, friends: [PFObject]) -> Bool {
-        if friends.contains(friend) {
-            return true
+        for currentFriend in friends {
+            if currentFriend["trueUsername"] as? String == friend["trueUsername"] as? String {
+                return true
+            }
         }
-        else {
-            return false
-        }
+        return false
     }
 
     class func searchFriends(searchString: String) -> RACSignal {
@@ -79,8 +78,8 @@ class Friend {
                             subscriber.sendError(error)
                             return
                         }
-                        if let fetchedUsers = fetchedResults {
-                            subscriber.sendNext(fetchedUsers)
+                        if let fetchedUsers = fetchedResults as? [PFObject] {
+                            subscriber.sendNext(removeCurrentUserList(fetchedUsers))
                         }
                         subscriber.sendCompleted()
                     })
@@ -98,7 +97,7 @@ class Friend {
             
             let currentUser = PFUser.currentUser()
             let querryFriendsRelation = currentUser?.relationForKey("friends").query()
-            querryFriendsRelation?.cachePolicy = PFCachePolicy.CacheThenNetwork
+            querryFriendsRelation?.cachePolicy = cachePolicy
 
             querryFriendsRelation?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
                 if let friends = results where error == nil {
@@ -125,5 +124,22 @@ class Friend {
             return nil
         })
     }
-    
+}
+
+extension Friend {
+ 
+    class func removeCurrentUserList(friends: [PFObject]) -> [PFObject] {
+        var friendsArray = friends
+        let usernameCurrentUser = PFUser.currentUser()!["trueUsername"] as? String
+        for var index = 0; index < friendsArray.count; index++ {
+            let currentFetchedFriend = friendsArray[index]
+            let currentUsername = currentFetchedFriend["trueUsername"] as? String
+            
+            if currentUsername == usernameCurrentUser! {
+                friendsArray.removeAtIndex(index)
+                break
+            }
+        }
+        return friendsArray
+    }
 }

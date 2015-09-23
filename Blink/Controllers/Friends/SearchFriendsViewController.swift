@@ -22,17 +22,24 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
         searchBar.endEditing(true)
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if let searchString = searchBar.text {
+            searchFriend(searchString)
+        }
+    }
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.characters.count < 2 {
             return
         }
-        
-        let searchSignal = Friend.searchFriends(searchText)
-        
+        searchFriend(searchText)
+    }
+    
+    func searchFriend(searchString: String) {
+        let searchSignal = Friend.searchFriends(searchString)
         searchSignal.subscribeNext({ (next: AnyObject!) -> Void in
             self.resultSearch.removeAll()
             if let users = next as? [PFObject] {
-                print(users)
                 self.resultSearch = users
                 self.tableView.reloadData()
             }
@@ -43,23 +50,16 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        searchBar.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Friend.friends().subscribeNext({ (next: AnyObject!) -> Void in
-            
-            if let friendsList = next as? [PFObject] {
-                self.currentFriends = friendsList
-                self.tableView.dataSource = self
-            }
-            
-            }, error: { (error: NSError!) -> Void in
-                
-            }) { () -> Void in
-                self.tableView.reloadData()
-        }
-        
+        loadCurrentFriends()
         searchBar.delegate = self
+        self.tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.registerNib(UINib(nibName: "SearchUserTableViewCell", bundle: nil), forCellReuseIdentifier: "searchCell")
     }
@@ -74,9 +74,55 @@ extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchCell") as! SearchUserTableViewCell
         
+        cell.actionSwitchBlock = {(state: Bool) -> Void in
+            if state {
+                self.addFriend(self.resultSearch[indexPath.row])
+            }
+            else {
+                self.removeFriend(self.resultSearch[indexPath.row])
+            }
+        }
+        
         let isFriend = Friend.isFriend(resultSearch[indexPath.row], friends: currentFriends)
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.initCellForUser(resultSearch[indexPath.row], isFriend: isFriend)
         return cell
+    }
+}
+
+extension SearchFriendsViewController {
+    
+    func loadCurrentFriends() {
+        Friend.friends(.NetworkOnly).subscribeNext({ (next: AnyObject!) -> Void in
+            
+            self.currentFriends.removeAll()
+            if let friendsList = next as? [PFObject] {
+                self.currentFriends = friendsList
+                print("current friends : \(self.currentFriends)")
+            }
+            self.tableView.reloadData()
+            
+            }, error: { (error: NSError!) -> Void in
+                
+            }) { () -> Void in
+        }
+    }
+    
+    func addFriend(friend: PFObject) {
+        Friend.addFriend(friend).subscribeNext({ (next: AnyObject!) -> Void in
+            }, error: { (error: NSError!) -> Void in
+                print("error add friend : \(error)")
+            }) { () -> Void in
+                self.loadCurrentFriends()
+        }
+    }
+    
+    func removeFriend(friend: PFObject) {
+        Friend.removeFriend(friend).subscribeNext({ (next: AnyObject!) -> Void in
+            }, error: { (error: NSError!) -> Void in
+                print("error remove friend : \(error)")
+            }) {() -> Void in
+                self.loadCurrentFriends()
+        }
     }
 }

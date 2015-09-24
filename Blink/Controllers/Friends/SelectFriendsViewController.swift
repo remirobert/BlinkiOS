@@ -64,7 +64,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            removeFriendSelected(indexPath.row)
+            removeFriendSelected(friends[indexPath.row])
         }
     }
     
@@ -82,9 +82,14 @@ extension SelectFriendsViewController {
         self.selectionLabel.text = "\(friendsSelected.count) selected"
     }
     
-    func removeFriendSelected(index: Int) {
-        self.friendsSelected.removeAtIndex(index)
-        updateDisplayLabelSelected()
+    func removeFriendSelected(friend: PFObject) {
+        for var index = 0; index < friendsSelected.count; index++ {
+            if friendsSelected[index] == friend {
+                friendsSelected.removeAtIndex(index)
+                updateDisplayLabelSelected()
+                return
+            }
+        }
     }
     
     func addFriendSelected(friend: PFObject) {

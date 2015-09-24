@@ -11,14 +11,31 @@ import PBJVision
 import jot
 import Masonry
 
+enum Drag {
+    case Circle, None
+}
+
 class CameraPreviewViewController: UIViewController {
 
     var photo: UIImage!
     var jotController: JotViewController!
-    var holeView: UIView!
+    var isDrag: Bool!
+    var dragEnable = Drag.Circle
     @IBOutlet var imagePreviewView: UIImageView!
     @IBOutlet var textEditButton: UIButton!
     @IBOutlet var backButton: UIButton!
+    
+    lazy var blurView: UIVisualEffectView! = {
+        let darkBlur = UIBlurEffect(style: .Dark)
+        let darkBlurView = UIVisualEffectView(effect: darkBlur)
+        return darkBlurView
+    }()
+    
+    lazy var holeView: HoleView! = {
+        var holeView = HoleView(frame: CGRectMake(0, 0, 150, 150))
+        holeView.image = self.photo
+        return holeView
+    }()
     
     @IBAction func backController(sender: AnyObject) {
         PBJVision.sharedInstance().startPreview()
@@ -26,8 +43,9 @@ class CameraPreviewViewController: UIViewController {
     }
     
     func manageSubView() {
-        view.bringSubviewToFront(holeView)
+        view.bringSubviewToFront(blurView)
         view.bringSubviewToFront(jotController.view)
+        view.bringSubviewToFront(holeView)
         view.bringSubviewToFront(textEditButton)
         view.bringSubviewToFront(backButton)
     }
@@ -39,10 +57,9 @@ class CameraPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        holeView = UIView()
-        holeView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
         view.addSubview(holeView)
-        holeView.mas_makeConstraints { (make: MASConstraintMaker!) -> Void in
+        view.addSubview(blurView)
+        blurView.mas_makeConstraints { (make: MASConstraintMaker!) -> Void in
             make.edges.equalTo()(self.view)
         }
         
@@ -70,4 +87,63 @@ class CameraPreviewViewController: UIViewController {
 extension CameraPreviewViewController: JotViewControllerDelegate {
     
     
+}
+
+extension CameraPreviewViewController {
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first
+        let position = touch!.locationInView(self.view)
+        
+        if self.dragEnable == Drag.None {
+            return
+        }
+        self.isDrag = false
+        
+        if CGRectContainsPoint(self.holeView.frame, position) {
+            self.isDrag = true
+        }
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if self.isDrag == true {
+            let touch = touches.first
+            let position = touch!.locationInView(self.view)
+            
+            holeView.tapEnable = false
+            switch self.dragEnable {
+            case Drag.Circle:
+                var newPosition = CGPointMake(position.x - self.holeView.frame.size.width / 2, position.y - self.holeView.frame.size.height / 2)
+                
+                if newPosition.x < -self.holeView.frame.size.width / 2 {
+                    newPosition.x = -self.holeView.frame.size.width / 2
+                }
+                if newPosition.x > self.view.frame.size.width - self.holeView.frame.width / 2 {
+                    newPosition.x = self.view.frame.size.width - self.holeView.frame.width / 2
+                }
+                
+                if newPosition.y < -self.holeView.frame.size.height / 2 {
+                    newPosition.y = -self.holeView.frame.size.height / 2
+                }
+                if newPosition.y > self.view.frame.size.height - self.holeView.frame.size.height / 2 {
+                    newPosition.y = self.view.frame.size.height - self.holeView.frame.height / 2
+                }
+                
+                self.holeView.frame.origin = newPosition
+                self.holeView.updatePostion()
+                
+            default: return
+            }
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.isDrag = false
+        holeView.tapEnable = true
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        self.isDrag = false
+        holeView.tapEnable = true
+    }
 }

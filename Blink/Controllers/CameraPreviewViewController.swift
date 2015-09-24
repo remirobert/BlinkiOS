@@ -24,6 +24,7 @@ class CameraPreviewViewController: UIViewController {
     @IBOutlet var imagePreviewView: UIImageView!
     @IBOutlet var textEditButton: UIButton!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var sendBlinkButton: UIButton!
     
     lazy var blurView: UIVisualEffectView! = {
         let darkBlur = UIBlurEffect(style: .Dark)
@@ -48,6 +49,7 @@ class CameraPreviewViewController: UIViewController {
         view.bringSubviewToFront(holeView)
         view.bringSubviewToFront(textEditButton)
         view.bringSubviewToFront(backButton)
+        view.bringSubviewToFront(sendBlinkButton)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,13 +82,21 @@ class CameraPreviewViewController: UIViewController {
         textEditButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
             self.jotController.state = JotViewState.EditingText
         }
+        
+        sendBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            let textImage = self.renderTextDrawer()
+            let text = self.jotController.textString
+        }
+        
         manageSubView()
     }
 }
 
 extension CameraPreviewViewController: JotViewControllerDelegate {
     
-    
+    func renderTextDrawer() -> UIImage {
+        return jotController.renderImage()
+    }
 }
 
 extension CameraPreviewViewController {

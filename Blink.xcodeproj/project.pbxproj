@@ -18,6 +18,7 @@
 		BB2916241BB398F500ED791E /* JotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29161B1BB398F500ED791E /* JotViewController.m */; settings = {ASSET_TAGS = (); }; };
 		BB2916251BB398F500ED791E /* UIImage+Jot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29161D1BB398F500ED791E /* UIImage+Jot.m */; settings = {ASSET_TAGS = (); }; };
 		BB2916271BB3A5C900ED791E /* HoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2916261BB3A5C900ED791E /* HoleView.swift */; settings = {ASSET_TAGS = (); }; };
+		BB2916291BB3ACE900ED791E /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2916281BB3ACE900ED791E /* SelectFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -93,6 +94,7 @@
 		BB29161C1BB398F500ED791E /* UIImage+Jot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Jot.h"; sourceTree = "<group>"; };
 		BB29161D1BB398F500ED791E /* UIImage+Jot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Jot.m"; sourceTree = "<group>"; };
 		BB2916261BB3A5C900ED791E /* HoleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleView.swift; sourceTree = "<group>"; };
+		BB2916281BB3ACE900ED791E /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
 		BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
 		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
 		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				BB71035E1BB0610700C31028 /* FriendsViewController.swift */,
 				BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */,
+				BB2916281BB3ACE900ED791E /* SelectFriendsViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				BB2916251BB398F500ED791E /* UIImage+Jot.m in Sources */,
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
+				BB2916291BB3ACE900ED791E /* SelectFriendsViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
 				BB2916221BB398F500ED791E /* JotTouchBezier.m in Sources */,
 				BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */,

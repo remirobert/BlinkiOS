@@ -86,6 +86,8 @@ class CameraPreviewViewController: UIViewController {
         sendBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
             let textImage = self.renderTextDrawer()
             let text = self.jotController.textString
+            
+            self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
         }
         
         manageSubView()

@@ -12,16 +12,21 @@ class MainFeedViewController: UIViewController {
 
     @IBOutlet var segmentFeed: UISegmentedControl!
     @IBOutlet var newBlinkButton: UIButton!
+    @IBOutlet var cameraButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.segmentFeed.rac_signalForControlEvents(UIControlEvents.EditingChanged).subscribeNext { (_) -> Void in
+        segmentFeed.rac_signalForControlEvents(UIControlEvents.EditingChanged).subscribeNext { (_) -> Void in
             
         }
         
-        self.newBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+        newBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
             
+        }
+        
+        cameraButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            self.performSegueWithIdentifier("cameraSegue", sender: nil)
         }
     }
 }

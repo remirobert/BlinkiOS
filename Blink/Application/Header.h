@@ -9,4 +9,6 @@
 #ifndef Header_h
 #define Header_h
 
+#import "JotViewController.h"
+
 #endif /* Header_h */

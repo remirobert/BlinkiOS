@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2915EF1BB38ABD00ED791E /* CameraPreviewViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BB29161E1BB398F500ED791E /* JotDrawingContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29160F1BB398F500ED791E /* JotDrawingContainer.m */; settings = {ASSET_TAGS = (); }; };
+		BB29161F1BB398F500ED791E /* JotDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916111BB398F500ED791E /* JotDrawView.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916201BB398F500ED791E /* JotTextEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916131BB398F500ED791E /* JotTextEditView.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916211BB398F500ED791E /* JotTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916151BB398F500ED791E /* JotTextView.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916221BB398F500ED791E /* JotTouchBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916171BB398F500ED791E /* JotTouchBezier.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916231BB398F500ED791E /* JotTouchPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916191BB398F500ED791E /* JotTouchPoint.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916241BB398F500ED791E /* JotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29161B1BB398F500ED791E /* JotViewController.m */; settings = {ASSET_TAGS = (); }; };
+		BB2916251BB398F500ED791E /* UIImage+Jot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29161D1BB398F500ED791E /* UIImage+Jot.m */; settings = {ASSET_TAGS = (); }; };
 		BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -17,6 +26,7 @@
 		BB2BCBE91BB15AB7005343B3 /* WaitBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */; settings = {ASSET_TAGS = (); }; };
 		BB2BCBEE1BB2FACB005343B3 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBEC1BB2FACB005343B3 /* FriendTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BB2BCBEF1BB2FACB005343B3 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB2BCBED1BB2FACB005343B3 /* FriendTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		BB2BCBF21BB38495005343B3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCBF11BB38495005343B3 /* CameraViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288CF1BAAA71800B211F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D11BAAABA700B211F6 /* Alert.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288D41BAAB6E400B211F6 /* UIApplication+rootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +73,24 @@
 		667B62A522C95D039ADDD65B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2915EF1BB38ABD00ED791E /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
+		BB29160D1BB398F500ED791E /* jot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jot.h; sourceTree = "<group>"; };
+		BB29160E1BB398F500ED791E /* JotDrawingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotDrawingContainer.h; sourceTree = "<group>"; };
+		BB29160F1BB398F500ED791E /* JotDrawingContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotDrawingContainer.m; sourceTree = "<group>"; };
+		BB2916101BB398F500ED791E /* JotDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotDrawView.h; sourceTree = "<group>"; };
+		BB2916111BB398F500ED791E /* JotDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotDrawView.m; sourceTree = "<group>"; };
+		BB2916121BB398F500ED791E /* JotTextEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotTextEditView.h; sourceTree = "<group>"; };
+		BB2916131BB398F500ED791E /* JotTextEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotTextEditView.m; sourceTree = "<group>"; };
+		BB2916141BB398F500ED791E /* JotTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotTextView.h; sourceTree = "<group>"; };
+		BB2916151BB398F500ED791E /* JotTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotTextView.m; sourceTree = "<group>"; };
+		BB2916161BB398F500ED791E /* JotTouchBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotTouchBezier.h; sourceTree = "<group>"; };
+		BB2916171BB398F500ED791E /* JotTouchBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotTouchBezier.m; sourceTree = "<group>"; };
+		BB2916181BB398F500ED791E /* JotTouchPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotTouchPoint.h; sourceTree = "<group>"; };
+		BB2916191BB398F500ED791E /* JotTouchPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotTouchPoint.m; sourceTree = "<group>"; };
+		BB29161A1BB398F500ED791E /* JotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotViewController.h; sourceTree = "<group>"; };
+		BB29161B1BB398F500ED791E /* JotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JotViewController.m; sourceTree = "<group>"; };
+		BB29161C1BB398F500ED791E /* UIImage+Jot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Jot.h"; sourceTree = "<group>"; };
+		BB29161D1BB398F500ED791E /* UIImage+Jot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Jot.m"; sourceTree = "<group>"; };
 		BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
 		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
 		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
@@ -72,6 +100,7 @@
 		BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitBlock.swift; sourceTree = "<group>"; };
 		BB2BCBEC1BB2FACB005343B3 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		BB2BCBED1BB2FACB005343B3 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		BB2BCBF11BB38495005343B3 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		BB4288CE1BAAA71800B211F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB4288D11BAAABA700B211F6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BB4288D31BAAB6E400B211F6 /* UIApplication+rootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+rootController.swift"; sourceTree = "<group>"; };
@@ -147,6 +176,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB2915F31BB398D300ED791E /* JotController */ = {
+			isa = PBXGroup;
+			children = (
+				BB29160D1BB398F500ED791E /* jot.h */,
+				BB29160E1BB398F500ED791E /* JotDrawingContainer.h */,
+				BB29160F1BB398F500ED791E /* JotDrawingContainer.m */,
+				BB2916101BB398F500ED791E /* JotDrawView.h */,
+				BB2916111BB398F500ED791E /* JotDrawView.m */,
+				BB2916121BB398F500ED791E /* JotTextEditView.h */,
+				BB2916131BB398F500ED791E /* JotTextEditView.m */,
+				BB2916141BB398F500ED791E /* JotTextView.h */,
+				BB2916151BB398F500ED791E /* JotTextView.m */,
+				BB2916161BB398F500ED791E /* JotTouchBezier.h */,
+				BB2916171BB398F500ED791E /* JotTouchBezier.m */,
+				BB2916181BB398F500ED791E /* JotTouchPoint.h */,
+				BB2916191BB398F500ED791E /* JotTouchPoint.m */,
+				BB29161A1BB398F500ED791E /* JotViewController.h */,
+				BB29161B1BB398F500ED791E /* JotViewController.m */,
+				BB29161C1BB398F500ED791E /* UIImage+Jot.h */,
+				BB29161D1BB398F500ED791E /* UIImage+Jot.m */,
+			);
+			name = JotController;
+			sourceTree = "<group>";
+		};
 		BB29D31D1BABF3DE005E6E2C /* Textdrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,9 +221,19 @@
 		BB2BCBE71BB15AAC005343B3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BB2915F31BB398D300ED791E /* JotController */,
 				BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BB2BCBF01BB38487005343B3 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				BB2BCBF11BB38495005343B3 /* CameraViewController.swift */,
+				BB2915EF1BB38ABD00ED791E /* CameraPreviewViewController.swift */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 		BB4288CD1BAAA70F00B211F6 /* User */ = {
@@ -244,6 +307,7 @@
 		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB2BCBF01BB38487005343B3 /* Camera */,
 				BB71035D1BB060E100C31028 /* Friends */,
 				BBE498751BAA97A2008A8ECF /* StartupControllers */,
 				BB4288D51BAAB8D400B211F6 /* MainFeedViewController.swift */,
@@ -550,26 +614,36 @@
 				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
 				BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */,
+				BB2916231BB398F500ED791E /* JotTouchPoint.m in Sources */,
 				BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */,
 				BB2BCBE91BB15AB7005343B3 /* WaitBlock.swift in Sources */,
+				BB2916251BB398F500ED791E /* UIImage+Jot.m in Sources */,
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
+				BB2916221BB398F500ED791E /* JotTouchBezier.m in Sources */,
 				BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */,
 				BB7103611BB0616A00C31028 /* SearchFriendsViewController.swift in Sources */,
 				BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */,
 				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
 				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
+				BB29161F1BB398F500ED791E /* JotDrawView.m in Sources */,
+				BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
 				BB2BCBEE1BB2FACB005343B3 /* FriendTableViewCell.swift in Sources */,
+				BB2BCBF21BB38495005343B3 /* CameraViewController.swift in Sources */,
 				BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */,
 				BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */,
 				BB7103631BB0621100C31028 /* Friend.swift in Sources */,
 				BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */,
 				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,
+				BB2916211BB398F500ED791E /* JotTextView.m in Sources */,
 				BBE4987A1BAA990D008A8ECF /* StoryBoard+instanceController.swift in Sources */,
+				BB29161E1BB398F500ED791E /* JotDrawingContainer.m in Sources */,
+				BB2916201BB398F500ED791E /* JotTextEditView.m in Sources */,
 				BBF384361BAA784600EDF854 /* AppDelegate.swift in Sources */,
+				BB2916241BB398F500ED791E /* JotViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,7 +792,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Blink/Application/Header.h;
 			};
 			name = Debug;
 		};
@@ -733,7 +807,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Blink/Application/Header.h;
 			};
 			name = Release;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import PBJVision
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("DU6edKCcIY9jOtr6ETShTM3FQr9vyYpzXDKJ6SAf", clientKey: "YPptEdeHL3EgJcNEPBI6m6HsVlGYpGBGmQIKX2Oh")
         
+        
         var controller: UIViewController!
         
         if PFUser.currentUser() == nil {
@@ -40,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         window?.rootViewController = controller
-        
+        PBJVision.sharedInstance().startPreview()
         applicationAppaerence()
         return true
     }

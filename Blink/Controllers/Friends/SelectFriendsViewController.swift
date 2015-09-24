@@ -45,6 +45,8 @@ class SelectFriendsViewController: UIViewController {
     }
 }
 
+//MARK:
+//MARK: UITableView dataSource
 extension SelectFriendsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +61,8 @@ extension SelectFriendsViewController: UITableViewDataSource {
     }
 }
 
+//MARK:
+//MARK: UITableView delegate
 extension SelectFriendsViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -76,6 +80,8 @@ extension SelectFriendsViewController: UITableViewDelegate {
     }
 }
 
+//MARK:
+//MARK: UITableView selection management
 extension SelectFriendsViewController {
     
     func updateDisplayLabelSelected() {

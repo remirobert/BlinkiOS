@@ -10,31 +10,12 @@ import UIKit
 import Parse
 import ReactiveCocoa
 
-class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
+class SearchFriendsViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var resultSearch = Array<PFObject>()
     var currentFriends = Array<PFObject>()
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchBar.text = nil
-        searchBar.endEditing(true)
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.endEditing(true)
-        if let searchString = searchBar.text {
-            searchFriend(searchString)
-        }
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.characters.count < 2 {
-            return
-        }
-        searchFriend(searchText)
-    }
     
     func searchFriend(searchString: String) {
         let searchSignal = Friend.searchFriends(searchString)
@@ -66,7 +47,33 @@ class SearchFriendsViewController: UIViewController, UISearchBarDelegate {
     }
 }
 
-extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegate {
+//MARK:
+//MARK: UISearchBar dataSource
+extension SearchFriendsViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        if let searchString = searchBar.text {
+            searchFriend(searchString)
+        }
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.characters.count < 2 {
+            return
+        }
+        searchFriend(searchText)
+    }
+}
+
+//MARK:
+//MARK: UITableView dataSource
+extension SearchFriendsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.resultSearch.count
@@ -91,6 +98,8 @@ extension SearchFriendsViewController: UITableViewDataSource, UITableViewDelegat
     }
 }
 
+//MARK:
+//MARK: Friends management
 extension SearchFriendsViewController {
     
     func loadCurrentFriends() {

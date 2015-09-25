@@ -14,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="458" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-p9-clE">
-                        <rect key="frame" x="8" y="8" width="40" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="gCa-sH-DXL"/>
-                            <constraint firstAttribute="width" constant="40" id="sTF-v4-gCF"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-Nl-5OR">
                         <rect key="frame" x="56" y="17" width="394" height="21"/>
                         <constraints>
@@ -36,13 +29,20 @@
                             </mask>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-p9-clE">
+                        <rect key="frame" x="8" y="13" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="gCa-sH-DXL"/>
+                            <constraint firstAttribute="width" constant="30" id="sTF-v4-gCF"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="leading" secondItem="Izn-p9-clE" secondAttribute="trailing" constant="8" id="HQs-nw-71s"/>
                     <constraint firstItem="Izn-p9-clE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Sh0-3R-9Xw"/>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="centerY" secondItem="Izn-p9-clE" secondAttribute="centerY" id="gew-sH-8xb"/>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="hls-M2-8XB"/>
-                    <constraint firstItem="PWb-Nl-5OR" firstAttribute="leading" secondItem="Izn-p9-clE" secondAttribute="trailing" constant="8" id="miV-Vd-5V5"/>
+                    <constraint firstItem="PWb-Nl-5OR" firstAttribute="leading" secondItem="Izn-p9-clE" secondAttribute="trailing" constant="18" id="miV-Vd-5V5"/>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="rBB-4n-UJ9"/>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rIc-Vy-p9W"/>
                     <constraint firstItem="PWb-Nl-5OR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="wY4-yl-xVQ"/>

@@ -54,12 +54,12 @@ class SelectFriendsViewController: UIViewController {
         
         segmentSelection.rac_signalForControlEvents(UIControlEvents.ValueChanged).subscribeNext { (_) -> Void in
             if self.segmentSelection.selectedSegmentIndex == 0 {
-                self.tableViewPlace.alpha = 0
-                self.tableViewFriend.alpha = 1
+                self.tableViewPlace.hidden = true
+                self.tableViewFriend.hidden = false
             }
             else {
-                self.tableViewFriend.alpha = 0
-                self.tableViewPlace.alpha = 1
+                self.tableViewFriend.hidden = true
+                self.tableViewPlace.hidden = false
             }
         }
     }
@@ -122,6 +122,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
         }
         else {
             placeSelected = nil
+            tableViewPlace.reloadData()
         }
     }
     
@@ -133,7 +134,13 @@ extension SelectFriendsViewController: UITableViewDelegate {
             }
         }
         else {
-            placeSelected = placesCellData[indexPath.row]
+            if placeSelected == placesCellData[indexPath.row] {
+                placeSelected = nil
+            }
+            else {
+                placeSelected = placesCellData[indexPath.row]
+            }
+            tableViewPlace.reloadData()
         }
     }
     

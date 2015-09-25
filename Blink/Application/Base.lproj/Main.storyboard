@@ -801,7 +801,11 @@
                     <view key="view" contentMode="scaleToFill" id="5TE-hL-DBo">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-56-a8B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcO-xB-Opj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-56-a8B">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -919,9 +923,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qcO-xB-Opj" firstAttribute="top" secondItem="rHK-m5-e3A" secondAttribute="bottom" constant="8" id="9TK-Ro-CjY"/>
                             <constraint firstItem="90u-fl-vJi" firstAttribute="leading" secondItem="5TE-hL-DBo" secondAttribute="leadingMargin" constant="-20" id="E4x-fZ-R20"/>
                             <constraint firstItem="3IP-P4-oNP" firstAttribute="top" secondItem="90u-fl-vJi" secondAttribute="bottom" id="EN6-2m-fA2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qcO-xB-Opj" secondAttribute="trailing" constant="-20" id="JUw-Sp-6kK"/>
                             <constraint firstItem="90u-fl-vJi" firstAttribute="top" secondItem="mJy-56-a8B" secondAttribute="bottom" id="SYv-fG-0zg"/>
+                            <constraint firstItem="90u-fl-vJi" firstAttribute="top" secondItem="qcO-xB-Opj" secondAttribute="bottom" id="XIy-4x-ely"/>
                             <constraint firstItem="rHK-m5-e3A" firstAttribute="leading" secondItem="5TE-hL-DBo" secondAttribute="leadingMargin" id="aAl-zU-pXF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mJy-56-a8B" secondAttribute="trailing" constant="-20" id="czy-jj-3ri"/>
                             <constraint firstItem="mJy-56-a8B" firstAttribute="top" secondItem="JeP-Cf-HkM" secondAttribute="bottom" id="f97-PD-jHo">
@@ -930,11 +937,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="90u-fl-vJi" secondAttribute="trailing" constant="-20" id="fgM-yT-tN7"/>
                             <constraint firstItem="rHK-m5-e3A" firstAttribute="top" secondItem="JeP-Cf-HkM" secondAttribute="bottom" constant="8" id="hja-a0-MuZ"/>
                             <constraint firstItem="rHK-m5-e3A" firstAttribute="trailing" secondItem="5TE-hL-DBo" secondAttribute="trailingMargin" id="onH-Qw-y0r"/>
+                            <constraint firstItem="qcO-xB-Opj" firstAttribute="leading" secondItem="5TE-hL-DBo" secondAttribute="leadingMargin" constant="-20" id="r02-b4-OaN"/>
                             <constraint firstItem="mJy-56-a8B" firstAttribute="leading" secondItem="5TE-hL-DBo" secondAttribute="leadingMargin" constant="-20" id="s5A-mg-kB3"/>
                             <constraint firstItem="mJy-56-a8B" firstAttribute="top" secondItem="rHK-m5-e3A" secondAttribute="bottom" constant="8" id="xeV-3v-qnh"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="qcO-xB-Opj"/>
                                 <exclude reference="mJy-56-a8B"/>
                                 <exclude reference="90u-fl-vJi"/>
                                 <exclude reference="rHK-m5-e3A"/>
@@ -943,18 +952,23 @@
                                 <exclude reference="aAl-zU-pXF"/>
                                 <exclude reference="hja-a0-MuZ"/>
                                 <exclude reference="onH-Qw-y0r"/>
+                                <exclude reference="9TK-Ro-CjY"/>
+                                <exclude reference="JUw-Sp-6kK"/>
+                                <exclude reference="r02-b4-OaN"/>
                                 <exclude reference="czy-jj-3ri"/>
                                 <exclude reference="f97-PD-jHo"/>
                                 <exclude reference="s5A-mg-kB3"/>
                                 <exclude reference="xeV-3v-qnh"/>
                                 <exclude reference="E4x-fZ-R20"/>
                                 <exclude reference="SYv-fG-0zg"/>
+                                <exclude reference="XIy-4x-ely"/>
                                 <exclude reference="fgM-yT-tN7"/>
                                 <exclude reference="EN6-2m-fA2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="qcO-xB-Opj"/>
                                 <include reference="mJy-56-a8B"/>
                                 <include reference="90u-fl-vJi"/>
                                 <include reference="rHK-m5-e3A"/>
@@ -963,12 +977,16 @@
                                 <include reference="aAl-zU-pXF"/>
                                 <include reference="hja-a0-MuZ"/>
                                 <include reference="onH-Qw-y0r"/>
+                                <include reference="9TK-Ro-CjY"/>
+                                <include reference="JUw-Sp-6kK"/>
+                                <include reference="r02-b4-OaN"/>
                                 <include reference="czy-jj-3ri"/>
                                 <include reference="f97-PD-jHo"/>
                                 <include reference="s5A-mg-kB3"/>
                                 <exclude reference="xeV-3v-qnh"/>
                                 <include reference="E4x-fZ-R20"/>
                                 <include reference="SYv-fG-0zg"/>
+                                <include reference="XIy-4x-ely"/>
                                 <include reference="fgM-yT-tN7"/>
                                 <include reference="EN6-2m-fA2"/>
                             </mask>
@@ -985,7 +1003,8 @@
                         <outlet property="segmentSelection" destination="rHK-m5-e3A" id="9Og-bh-T3f"/>
                         <outlet property="selectionLabel" destination="OCn-ws-dt3" id="fO6-kR-Vur"/>
                         <outlet property="sendButton" destination="fGN-OW-Asj" id="6R4-Uz-Vzx"/>
-                        <outlet property="tableView" destination="mJy-56-a8B" id="qXC-FS-FId"/>
+                        <outlet property="tableViewFriend" destination="qcO-xB-Opj" id="7kN-vQ-5KN"/>
+                        <outlet property="tableViewPlace" destination="mJy-56-a8B" id="AL6-p1-VAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnK-RP-5P1" userLabel="First Responder" sceneMemberID="firstResponder"/>

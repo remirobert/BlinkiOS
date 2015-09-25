@@ -7,24 +7,21 @@
 //
 
 import UIKit
-import Parse
 
-class SelectFriendTableViewCell: UITableViewCell {
+class SelectTableViewCell: UITableViewCell {
 
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var selectionStatusImage: UIImageView!
     
-    func selectFriend() {
+    func selectCell() {
         selectionStatusImage.image = UIImage(named: "icon-friend-ticked")
     }
     
-    func unselectFriend() {
+    func deselectCell() {
         selectionStatusImage.image = UIImage(named: "icon-friend-untick")
     }
     
-    func initCell(friend: PFObject) {
-        if let username = friend["trueUsername"] as? String {
-            usernameLabel.text = username
-        }
+    func initCell(label: String) {
+        usernameLabel.text = label
     }
 }

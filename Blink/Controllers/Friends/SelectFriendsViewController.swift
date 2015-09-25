@@ -12,35 +12,55 @@ import ReactiveCocoa
 
 class SelectFriendsViewController: UIViewController {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableViewFriend: UITableView!
+    @IBOutlet var tableViewPlace: UITableView!
     @IBOutlet var selectionLabel: UILabel!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var segmentSelection: UISegmentedControl!
     var friends = Array<PFObject>()
     var friendsSelected = Array<PFObject>()
+    var placesCellData = ["Nearby (<25km)", "Far far away"]
+    var placeSelected: String?
     
     @IBAction func dismissSelection(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func initTableView(tableView: UITableView) {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.registerNib(UINib(nibName: "SelectFriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+        tableView.registerNib(UINib(nibName: "SelectTableViewCell", bundle: nil), forCellReuseIdentifier: "selectCell")
         tableView.allowsMultipleSelection = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initTableView(tableViewFriend)
+        initTableView(tableViewPlace)
+        tableViewPlace.hidden = true
         
         Friend.friends(PFCachePolicy.CacheThenNetwork).subscribeNext({ (next: AnyObject!) -> Void in
             
             if let friends = next as? [PFObject] {
                 self.friends = friends
-                self.tableView.reloadData()
+                self.tableViewFriend.reloadData()
             }
             }, error: { (error: NSError!) -> Void in
                 print("error to get friends list : \(error)")
             }) { () -> Void in
+        }
+        
+        segmentSelection.rac_signalForControlEvents(UIControlEvents.ValueChanged).subscribeNext { (_) -> Void in
+            if self.segmentSelection.selectedSegmentIndex == 0 {
+                self.tableViewPlace.alpha = 0
+                self.tableViewFriend.alpha = 1
+            }
+            else {
+                self.tableViewFriend.alpha = 0
+                self.tableViewPlace.alpha = 1
+            }
         }
     }
 }
@@ -50,22 +70,42 @@ class SelectFriendsViewController: UIViewController {
 extension SelectFriendsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        if tableView.tag == 0 {
+            return friends.count
+        }
+        return placesCellData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("friendCell") as! SelectFriendTableViewCell
         
-        let currentFriend = friends[indexPath.row]
-        cell.initCell(currentFriend)
-        
-        if friendsSelected.contains(currentFriend) {
-            cell.selectFriend()
+        if tableView.tag == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("selectCell") as! SelectTableViewCell
+            
+            let currentFriend = friends[indexPath.row]
+            if let username = currentFriend["trueUsername"] as? String {
+                cell.initCell(username)
+            }
+            
+            if friendsSelected.contains(currentFriend) {
+                cell.selectCell()
+            }
+            else {
+                cell.deselectCell()
+            }
+            return cell
         }
         else {
-            cell.unselectFriend()
+            let cell = tableView.dequeueReusableCellWithIdentifier("selectCell") as! SelectTableViewCell
+            
+            cell.initCell(placesCellData[indexPath.row])
+            cell.deselectCell()
+            if let selectedPlace = placeSelected {
+                if selectedPlace == placesCellData[indexPath.row] {
+                    cell.selectCell()
+                }
+            }
+            return cell
         }
-        return cell
     }
 }
 
@@ -74,16 +114,26 @@ extension SelectFriendsViewController: UITableViewDataSource {
 extension SelectFriendsViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectFriendTableViewCell {
-            cell.unselectFriend()
-            removeFriendSelected(friends[indexPath.row])
+        if tableView.tag == 0 {
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectTableViewCell {
+                cell.deselectCell()
+                removeFriendSelected(friends[indexPath.row])
+            }
+        }
+        else {
+            placeSelected = nil
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectFriendTableViewCell {
-            cell.selectFriend()
-            addFriendSelected(friends[indexPath.row])
+        if tableView.tag == 0 {
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectTableViewCell {
+                cell.selectCell()
+                addFriendSelected(friends[indexPath.row])
+            }
+        }
+        else {
+            placeSelected = placesCellData[indexPath.row]
         }
     }
     

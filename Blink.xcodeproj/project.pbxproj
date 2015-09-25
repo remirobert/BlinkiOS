@@ -21,8 +21,8 @@
 		BB2916291BB3ACE900ED791E /* SelectFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2916281BB3ACE900ED791E /* SelectFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29162A1BB402C500ED791E /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103621BB0621100C31028 /* Friend.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29162B1BB402E100ED791E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288CE1BAAA71800B211F6 /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		BB29162E1BB4D19E00ED791E /* SelectFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29162C1BB4D19D00ED791E /* SelectFriendTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		BB29162F1BB4D19E00ED791E /* SelectFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB29162D1BB4D19D00ED791E /* SelectFriendTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		BB29162E1BB4D19E00ED791E /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29162C1BB4D19D00ED791E /* SelectTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BB29162F1BB4D19E00ED791E /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB29162D1BB4D19D00ED791E /* SelectTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BB29D3211BABF3E9005E6E2C /* DrawTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D3201BABF3E9005E6E2C /* TextEditView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -99,8 +99,8 @@
 		BB29161D1BB398F500ED791E /* UIImage+Jot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Jot.m"; sourceTree = "<group>"; };
 		BB2916261BB3A5C900ED791E /* HoleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleView.swift; sourceTree = "<group>"; };
 		BB2916281BB3ACE900ED791E /* SelectFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendsViewController.swift; sourceTree = "<group>"; };
-		BB29162C1BB4D19D00ED791E /* SelectFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFriendTableViewCell.swift; sourceTree = "<group>"; };
-		BB29162D1BB4D19D00ED791E /* SelectFriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectFriendTableViewCell.xib; sourceTree = "<group>"; };
+		BB29162C1BB4D19D00ED791E /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
+		BB29162D1BB4D19D00ED791E /* SelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewCell.xib; sourceTree = "<group>"; };
 		BB29D31E1BABF3E9005E6E2C /* DrawTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTextView.swift; sourceTree = "<group>"; };
 		BB29D31F1BABF3E9005E6E2C /* TextDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDrawer.swift; sourceTree = "<group>"; };
 		BB29D3201BABF3E9005E6E2C /* TextEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditView.swift; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 				BB2BCBE41BB13B44005343B3 /* SearchUserTableViewCell.xib */,
 				BB2BCBEC1BB2FACB005343B3 /* FriendTableViewCell.swift */,
 				BB2BCBED1BB2FACB005343B3 /* FriendTableViewCell.xib */,
-				BB29162C1BB4D19D00ED791E /* SelectFriendTableViewCell.swift */,
-				BB29162D1BB4D19D00ED791E /* SelectFriendTableViewCell.xib */,
+				BB29162C1BB4D19D00ED791E /* SelectTableViewCell.swift */,
+				BB29162D1BB4D19D00ED791E /* SelectTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				BB2BCBE61BB13B44005343B3 /* SearchUserTableViewCell.xib in Resources */,
 				BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */,
 				BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */,
-				BB29162F1BB4D19E00ED791E /* SelectFriendTableViewCell.xib in Resources */,
+				BB29162F1BB4D19E00ED791E /* SelectTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,7 +643,7 @@
 				BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */,
 				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
 				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
-				BB29162E1BB4D19E00ED791E /* SelectFriendTableViewCell.swift in Sources */,
+				BB29162E1BB4D19E00ED791E /* SelectTableViewCell.swift in Sources */,
 				BB29161F1BB398F500ED791E /* JotDrawView.m in Sources */,
 				BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,

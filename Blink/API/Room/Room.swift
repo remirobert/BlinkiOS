@@ -10,6 +10,16 @@ import UIKit
 import Parse
 import ReactiveCocoa
 
+/*
+PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
+[query whereKey:@"students" equalTo:student];
+In this example, the student is a PFObject with a className that matches the relation in "students". If this is a relation of PFUsers and you're looking for the current user's "Teacher"s, you'd use:
+
+PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
+[query whereKey:@"students" equalTo:[PFUser currentUser]];
+*/
+
+
 class Room {
 
     class func fetchDirectRoomParticipantUser() -> RACSignal {

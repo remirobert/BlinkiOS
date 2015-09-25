@@ -29,7 +29,7 @@ class SelectFriendsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.registerNib(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
+        tableView.registerNib(UINib(nibName: "SelectFriendTableViewCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         tableView.allowsMultipleSelection = true
         
         Friend.friends(PFCachePolicy.CacheThenNetwork).subscribeNext({ (next: AnyObject!) -> Void in
@@ -54,9 +54,17 @@ extension SelectFriendsViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("friendCell") as! FriendTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("friendCell") as! SelectFriendTableViewCell
         
-        cell.initCell(friends[indexPath.row])
+        let currentFriend = friends[indexPath.row]
+        cell.initCell(currentFriend)
+        
+        if friendsSelected.contains(currentFriend) {
+            cell.selectFriend()
+        }
+        else {
+            cell.unselectFriend()
+        }
         return cell
     }
 }
@@ -66,22 +74,26 @@ extension SelectFriendsViewController: UITableViewDataSource {
 extension SelectFriendsViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = UITableViewCellAccessoryType.None
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectFriendTableViewCell {
+            cell.unselectFriend()
             removeFriendSelected(friends[indexPath.row])
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectFriendTableViewCell {
+            cell.selectFriend()
             addFriendSelected(friends[indexPath.row])
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 55
     }
 }
 
 //MARK:
-//MARK: UITableView selection management
+//MARK: friend selection management
 extension SelectFriendsViewController {
     
     func updateDisplayLabelSelected() {

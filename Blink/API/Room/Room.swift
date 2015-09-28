@@ -61,6 +61,8 @@ class Room {
             let newRoom = PFObject(className: "privateRoom")
             newRoom.setValue(PFUser.currentUser(), forKey: "creator")
             newRoom.setValue(title, forKey: "title")
+            newRoom.setValue(false, forKey: "public")
+            newRoom.setValue(false, forKey: "global")
             
             addParticipantRoom(newRoom, participants: participants)
             addBlinkRoom(newRoom, blink: blink)
@@ -73,6 +75,42 @@ class Room {
                     subscriber.sendError(error)
                 }
                 subscriber.sendCompleted()
+            })
+            return nil
+        })
+    }
+    
+    class func makeRoomPublic(room: PFObject, distance: String) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+
+            PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
+                
+                if error != nil {
+                    subscriber.sendError(error)
+                }
+                if let geoPoint = geoPoint {
+                    room.setValue(geoPoint, forKey: "position")
+                    room.setValue(true, forKey: "public")
+                    if distance == "Nearby (<25km)" {
+                        room.setValue(false, forKey: "global")
+                    }
+                    else {
+                        room.setValue(true, forKey: "global")
+                    }
+                    
+                    room.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                        if success && error == nil {
+                            subscriber.sendNext(room)
+                            subscriber.sendCompleted()
+                        }
+                        else {
+                            subscriber.sendError(error)
+                        }
+                    })
+                }
+                else {
+                    subscriber.sendError(nil)
+                }
             })
             return nil
         })

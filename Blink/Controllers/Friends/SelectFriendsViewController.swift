@@ -32,6 +32,15 @@ class SelectFriendsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func updateDisplaySelection() {
+        if friendsSelected.count == 0 && placeSelected == nil {
+            sendBlink.hidden = true
+        }
+        else {
+            sendBlink.hidden = false
+        }
+    }
+    
     func initTableView(tableView: UITableView) {
         tableView.dataSource = self
         tableView.delegate = self
@@ -83,8 +92,24 @@ class SelectFriendsViewController: UIViewController {
                     
                     Room.createNewRoom(self.blink.message, blink: blink, participants: self.friendsSelected).subscribeNext({ (next: AnyObject!) -> Void in
 
-                        print("creation room success")
                         
+                        if let room = next as? PFObject {
+                            
+                            if let placeSelected = self.placeSelected {
+                                Room.makeRoomPublic(room, distance: placeSelected).subscribeNext({ (next: AnyObject!) -> Void in
+                                    
+                                    print("creation room success")
+                                    return
+                                    
+                                    }, error: { (error: NSError!) -> Void in
+                                        print("error make room public : \(error)")
+                                })
+                            }
+                            else {
+                                print("creation room success")
+                                return
+                            }
+                        }
                         }, error: { (error: NSError!) -> Void in
                             print("error create room : \(error)")
                     })
@@ -155,6 +180,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
         }
         else {
             placeSelected = nil
+            updateDisplayLabelSelected()
             tableViewPlace.reloadData()
         }
     }
@@ -173,6 +199,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
             else {
                 placeSelected = placesCellData[indexPath.row]
             }
+            updateDisplayLabelSelected()
             tableViewPlace.reloadData()
         }
     }
@@ -187,6 +214,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
 extension SelectFriendsViewController {
     
     func updateDisplayLabelSelected() {
+        updateDisplayLabelSelected()
         self.selectionLabel.text = "\(friendsSelected.count) selected"
     }
     

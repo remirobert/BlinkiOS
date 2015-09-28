@@ -79,46 +79,7 @@ class SelectFriendsViewController: UIViewController {
         }
         
         sendBlink.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
-            
-            Blink.createBlink(self.imagePhoto, textImage: self.imageText, blinkData: self.blink).subscribeNext({ (next: AnyObject!) -> Void in
-                
-                print("creation blink over")
-                
-                if let blink = next as? PFObject {
-
-                    print("blink success")
-
-                    self.friendsSelected.append(PFUser.currentUser()!)
-                    
-                    Room.createNewRoom(self.blink.message, blink: blink, participants: self.friendsSelected).subscribeNext({ (next: AnyObject!) -> Void in
-
-                        
-                        if let room = next as? PFObject {
-                            
-                            if let placeSelected = self.placeSelected {
-                                Room.makeRoomPublic(room, distance: placeSelected).subscribeNext({ (next: AnyObject!) -> Void in
-                                    
-                                    print("creation room success")
-                                    return
-                                    
-                                    }, error: { (error: NSError!) -> Void in
-                                        print("error make room public : \(error)")
-                                })
-                            }
-                            else {
-                                print("creation room success")
-                                return
-                            }
-                        }
-                        }, error: { (error: NSError!) -> Void in
-                            print("error create room : \(error)")
-                    })
-                }
-                
-                }, error: { (error: NSError!) -> Void in
-                    print("error create blink : \(error)")
-            })
-            
+            self.createBlink()
         }
     }
 }
@@ -214,7 +175,7 @@ extension SelectFriendsViewController: UITableViewDelegate {
 extension SelectFriendsViewController {
     
     func updateDisplayLabelSelected() {
-        updateDisplayLabelSelected()
+        updateDisplaySelection()
         self.selectionLabel.text = "\(friendsSelected.count) selected"
     }
     
@@ -231,5 +192,44 @@ extension SelectFriendsViewController {
     func addFriendSelected(friend: PFObject) {
         self.friendsSelected.append(friend)
         updateDisplayLabelSelected()
+    }
+}
+
+//MARK:
+//MARK: Blink creation
+extension SelectFriendsViewController {
+    
+    func createBlink() {
+        Blink.createBlink(self.imagePhoto, textImage: self.imageText, blinkData: self.blink).subscribeNext({ (next: AnyObject!) -> Void in
+            
+            if let blink = next as? PFObject {
+                self.friendsSelected.append(PFUser.currentUser()!)
+                
+                Room.createNewRoom(self.blink.message, blink: blink, participants: self.friendsSelected).subscribeNext({ (next: AnyObject!) -> Void in
+                    if let room = next as? PFObject {
+                        
+                        if let placeSelected = self.placeSelected {
+                            Room.makeRoomPublic(room, distance: placeSelected).subscribeNext({ (next: AnyObject!) -> Void in
+                                
+                                print("creation room success")
+                                return
+                                
+                                }, error: { (error: NSError!) -> Void in
+                                    print("error make room public : \(error)")
+                            })
+                        }
+                        else {
+                            print("creation room success")
+                            return
+                        }
+                    }
+                    }, error: { (error: NSError!) -> Void in
+                        print("error create room : \(error)")
+                })
+            }
+            
+            }, error: { (error: NSError!) -> Void in
+                print("error create blink : \(error)")
+        })
     }
 }

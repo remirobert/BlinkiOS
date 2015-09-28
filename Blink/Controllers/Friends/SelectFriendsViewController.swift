@@ -17,10 +17,16 @@ class SelectFriendsViewController: UIViewController {
     @IBOutlet var selectionLabel: UILabel!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var segmentSelection: UISegmentedControl!
+    @IBOutlet var sendBlink: UIButton!
+    
     var friends = Array<PFObject>()
     var friendsSelected = Array<PFObject>()
     var placesCellData = ["Nearby (<25km)", "Far far away"]
     var placeSelected: String?
+    
+    var blink: BlinkData!
+    var imagePhoto: UIImage!
+    var imageText: UIImage!
     
     @IBAction func dismissSelection(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

@@ -84,13 +84,25 @@ class CameraPreviewViewController: UIViewController {
         }
         
         sendBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
-            let textImage = self.renderTextDrawer()
             let text = self.jotController.textString
+            let positionX = Float(UIScreen.mainScreen().bounds.size.width / self.holeView.frame.origin.x)
+            let positionY = Float(UIScreen.mainScreen().bounds.size.height / self.holeView.frame.origin.y)
+            let sizeHole = Float(UIScreen.mainScreen().bounds.size.width / self.holeView.frame.size.width)
             
-            self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
+            let blink = BlinkData(positionX: positionX, positionY: positionY, sizeHole: sizeHole, message: text)
+            
+            self.performSegueWithIdentifier("selectFriendSegue", sender: blink as? AnyObject)
         }
         
         manageSubView()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let blinkData = sender as? BlinkData where segue.identifier == "selectFriendSegue" {
+            (segue.destinationViewController as! SelectFriendsViewController).blink = blinkData
+            (segue.destinationViewController as! SelectFriendsViewController).imageText = self.jotController.renderImage()
+            (segue.destinationViewController as! SelectFriendsViewController).imagePhoto = self.photo
+        }
     }
 }
 

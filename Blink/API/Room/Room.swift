@@ -21,7 +21,41 @@ PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
 
 
 class Room {
-
+    
+    class func addParticipantRoom(room: PFObject, participants: [PFObject]) {
+        let relationParticipants = room.relationForKey("participants")
+        for currentParticipant in participants {
+            relationParticipants.addObject(currentParticipant)
+        }
+    }
+    
+    class func addBlinkRoom(room: PFObject, blink: PFObject) {        
+        let relationContents = room.relationForKey("contents")
+        relationContents.addObject(blink)
+    }
+    
+    class func createNewRoom(title: String, blink: PFObject, participants: [PFObject]) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            let newRoom = PFObject(className: "privateRoom")
+            newRoom.setValue(PFUser.currentUser(), forKey: "creator")
+            newRoom.setValue(title, forKey: "title")
+            
+            addParticipantRoom(newRoom, participants: participants)
+            addBlinkRoom(newRoom, blink: blink)
+            
+            newRoom.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                if success && error == nil {
+                    subscriber.sendNext(newRoom)
+                }
+                else {
+                    subscriber.sendError(error)
+                }
+                subscriber.sendCompleted()
+            })
+            return nil
+        })
+    }
+    
     class func fetchDirectRoomParticipantUser() -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             

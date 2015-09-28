@@ -21,6 +21,7 @@ class CameraPreviewViewController: UIViewController {
     var jotController: JotViewController!
     var isDrag: Bool!
     var dragEnable = Drag.Circle
+    var blinkData: BlinkData!
     @IBOutlet var imagePreviewView: UIImageView!
     @IBOutlet var textEditButton: UIButton!
     @IBOutlet var backButton: UIButton!
@@ -90,18 +91,23 @@ class CameraPreviewViewController: UIViewController {
             let sizeHole = Float(UIScreen.mainScreen().bounds.size.width / self.holeView.frame.size.width)
             
             let blink = BlinkData(positionX: positionX, positionY: positionY, sizeHole: sizeHole, message: text)
-            
-            self.performSegueWithIdentifier("selectFriendSegue", sender: blink as? AnyObject)
+            self.blinkData = blink
+            self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
         }
         
         manageSubView()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let blinkData = sender as? BlinkData where segue.identifier == "selectFriendSegue" {
-            (segue.destinationViewController as! SelectFriendsViewController).blink = blinkData
-            (segue.destinationViewController as! SelectFriendsViewController).imageText = self.jotController.renderImage()
-            (segue.destinationViewController as! SelectFriendsViewController).imagePhoto = self.photo
+        if segue.identifier == "selectFriendSegue" {
+            
+            print(segue.destinationViewController)
+            
+            if let controller = (segue.destinationViewController as! UINavigationController).topViewController as? SelectFriendsViewController {
+                controller.blink = blinkData
+                controller.imageText = self.jotController.renderImage()
+                controller.imagePhoto = self.photo
+            }
         }
     }
 }

@@ -22,14 +22,36 @@ PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
 
 class Room {
     
-    class func addParticipantRoom(room: PFObject, participants: [PFObject]) {
+    class func fetchRooms() -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            let querry = PFQuery(className: "privateRoom")
+            querry.whereKey("participants", equalTo: PFUser.currentUser()!)
+            querry.cachePolicy = PFCachePolicy.CacheThenNetwork
+            
+            querry.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
+                if error != nil {
+                    subscriber.sendError(error)
+                }
+                print("results : \(results)")
+                if let rooms = results {
+                    subscriber.sendNext(rooms)
+                    subscriber.sendCompleted()
+                }
+                subscriber.sendNext(nil)
+                subscriber.sendCompleted()
+            })
+            return nil
+        })
+    }
+    
+    private class func addParticipantRoom(room: PFObject, participants: [PFObject]) {
         let relationParticipants = room.relationForKey("participants")
         for currentParticipant in participants {
             relationParticipants.addObject(currentParticipant)
         }
     }
     
-    class func addBlinkRoom(room: PFObject, blink: PFObject) {        
+    private class func addBlinkRoom(room: PFObject, blink: PFObject) {
         let relationContents = room.relationForKey("contents")
         relationContents.addObject(blink)
     }
@@ -51,35 +73,6 @@ class Room {
                     subscriber.sendError(error)
                 }
                 subscriber.sendCompleted()
-            })
-            return nil
-        })
-    }
-    
-    class func fetchDirectRoomParticipantUser() -> RACSignal {
-        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
-            
-            let querryParticipant = PFQuery(className: "Participant")
-            
-            querryParticipant.whereKey("user", equalTo: PFUser.currentUser()!)
-            querryParticipant.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
-                if let participants = results where error == nil {
-                    let rooms = participants.flatMap { ($0["room"]) }
-                    
-                    PFObject.fetchAllIfNeededInBackground(rooms, block: { (fetchedResults: [AnyObject]?, error: NSError?) -> Void in
-
-                        if let fetchedRooms = fetchedResults where error == nil {
-                            subscriber.sendNext(fetchedRooms)
-                            subscriber.sendCompleted()
-                        }
-                        else {
-                            subscriber.sendError(error)
-                        }
-                    })
-                }
-                else {
-                    subscriber.sendError(error)
-                }
             })
             return nil
         })

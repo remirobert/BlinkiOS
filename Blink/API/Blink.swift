@@ -26,7 +26,7 @@ struct BlinkData {
 
 class Blink {
 
-    class func saveFileBlink(photo: UIImage, textImage: UIImage?) -> RACSignal {
+    private class func saveFileBlink(photo: UIImage, textImage: UIImage?) -> RACSignal {
         return RACSignal.createSignal({ (subsciber: RACSubscriber!) -> RACDisposable! in
             
             var signalSaveText: RACSignal?

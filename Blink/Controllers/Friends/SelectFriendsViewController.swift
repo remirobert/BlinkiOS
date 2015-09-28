@@ -68,6 +68,33 @@ class SelectFriendsViewController: UIViewController {
                 self.tableViewPlace.hidden = false
             }
         }
+        
+        sendBlink.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            
+            Blink.createBlink(self.imagePhoto, textImage: self.imageText, blinkData: self.blink).subscribeNext({ (next: AnyObject!) -> Void in
+                
+                print("creation blink over")
+                
+                if let blink = next as? PFObject {
+
+                    print("blink success")
+
+                    self.friendsSelected.append(PFUser.currentUser()!)
+                    
+                    Room.createNewRoom(self.blink.message, blink: blink, participants: self.friendsSelected).subscribeNext({ (next: AnyObject!) -> Void in
+
+                        print("creation room success")
+                        
+                        }, error: { (error: NSError!) -> Void in
+                            print("error create room : \(error)")
+                    })
+                }
+                
+                }, error: { (error: NSError!) -> Void in
+                    print("error create blink : \(error)")
+            })
+            
+        }
     }
 }
 

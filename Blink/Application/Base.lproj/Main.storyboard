@@ -363,31 +363,49 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iX-6P-mQ7">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="9Dp-cD-IDQ" secondAttribute="trailing" constant="-20" id="2FO-zj-5NI"/>
+                            <constraint firstItem="4iX-6P-mQ7" firstAttribute="top" secondItem="6Ka-8i-KxW" secondAttribute="bottom" id="4tZ-PA-TPJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4iX-6P-mQ7" secondAttribute="trailing" constant="-20" id="Fft-fl-ahf"/>
                             <constraint firstItem="9Dp-cD-IDQ" firstAttribute="leading" secondItem="dl9-LM-MfA" secondAttribute="leadingMargin" constant="-20" id="I7J-i2-1gE"/>
                             <constraint firstItem="lgG-et-jx6" firstAttribute="top" secondItem="9Dp-cD-IDQ" secondAttribute="bottom" id="RRS-jL-FaA"/>
+                            <constraint firstItem="4iX-6P-mQ7" firstAttribute="leading" secondItem="dl9-LM-MfA" secondAttribute="leadingMargin" constant="-20" id="pG3-Lb-j6p"/>
+                            <constraint firstItem="9Dp-cD-IDQ" firstAttribute="top" secondItem="4iX-6P-mQ7" secondAttribute="bottom" id="r5j-fU-gmb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="9Dp-cD-IDQ"/>
+                                <exclude reference="4iX-6P-mQ7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="RRS-jL-FaA"/>
+                                <exclude reference="4tZ-PA-TPJ"/>
+                                <exclude reference="Fft-fl-ahf"/>
+                                <exclude reference="pG3-Lb-j6p"/>
                                 <exclude reference="2FO-zj-5NI"/>
                                 <exclude reference="I7J-i2-1gE"/>
+                                <exclude reference="r5j-fU-gmb"/>
+                                <exclude reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="9Dp-cD-IDQ"/>
+                                <include reference="4iX-6P-mQ7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="RRS-jL-FaA"/>
+                                <include reference="4tZ-PA-TPJ"/>
+                                <include reference="Fft-fl-ahf"/>
+                                <include reference="pG3-Lb-j6p"/>
                                 <include reference="2FO-zj-5NI"/>
                                 <include reference="I7J-i2-1gE"/>
+                                <include reference="r5j-fU-gmb"/>
+                                <include reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                     </view>
@@ -412,6 +430,7 @@
                         <outlet property="cameraButton" destination="H4r-M0-ftR" id="8au-sD-Ey4"/>
                         <outlet property="newBlinkButton" destination="H4r-M0-ftR" id="8M7-S0-vQC"/>
                         <outlet property="segmentFeed" destination="1fW-kU-c9p" id="zox-09-Hwz"/>
+                        <outlet property="tableView" destination="4iX-6P-mQ7" id="Vcl-js-Ihz"/>
                         <segue destination="F3z-69-czq" kind="presentation" identifier="cameraSegue" id="Od1-QX-uue"/>
                     </connections>
                 </viewController>

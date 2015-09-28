@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Parse
 
 class RoomTableViewCell: UITableViewCell {
 
     @IBOutlet var numberUsers: UILabel!
     @IBOutlet var titleRoom: UILabel!
     @IBOutlet var detailCell: UILabel!
+    
+    func initRoomCell(room: PFObject) {
+        self.titleRoom.text = room["title"] as? String
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

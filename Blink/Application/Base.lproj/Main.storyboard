@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693" y="467.25"/>
+            <point key="canvasLocation" x="681" y="-678.75"/>
         </scene>
         <!--Enter your phone number-->
         <scene sceneID="uee-dL-arH">
@@ -278,7 +278,132 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xla-kl-8Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578.5" y="1044.75"/>
+            <point key="canvasLocation" x="2566.5" y="-101.25"/>
+        </scene>
+        <!--Media Detail View Controller-->
+        <scene sceneID="SlH-1T-luf">
+            <objects>
+                <viewController id="K9t-ki-HFW" customClass="MediaDetailViewController" customModule="Blink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="veH-oW-3ni"/>
+                        <viewControllerLayoutGuide type="bottom" id="LYc-U5-bFn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KXY-5a-E3U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tpC-Tf-487">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IFM-Rw-QlN">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-BH-dvC">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.25882352939999997" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0i9-bn-5eY"/>
+                                    <constraint firstAttribute="height" constant="50" id="trz-Vi-NlP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0i9-bn-5eY"/>
+                                        <exclude reference="trz-Vi-NlP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0i9-bn-5eY"/>
+                                        <include reference="trz-Vi-NlP"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-Ny-V5t">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Cq-yf-xbN"/>
+                                    <constraint firstAttribute="width" constant="50" id="YqU-vD-RTA"/>
+                                </constraints>
+                                <state key="normal" image="icon-back-camera"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Cq-yf-xbN"/>
+                                        <exclude reference="YqU-vD-RTA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7Cq-yf-xbN"/>
+                                        <include reference="YqU-vD-RTA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="backController:" destination="K9t-ki-HFW" eventType="touchUpInside" id="TbA-rd-7UB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LYc-U5-bFn" firstAttribute="top" secondItem="tpC-Tf-487" secondAttribute="bottom" id="1xz-HU-4aU"/>
+                            <constraint firstItem="tpC-Tf-487" firstAttribute="leading" secondItem="KXY-5a-E3U" secondAttribute="leadingMargin" constant="-20" id="AsE-Yu-Kvo"/>
+                            <constraint firstItem="vUQ-Ny-V5t" firstAttribute="leading" secondItem="KXY-5a-E3U" secondAttribute="leadingMargin" constant="-20" id="HFk-pD-OvY"/>
+                            <constraint firstItem="vUQ-Ny-V5t" firstAttribute="top" secondItem="veH-oW-3ni" secondAttribute="bottom" id="WR4-u2-Q5J"/>
+                            <constraint firstItem="Lne-BH-dvC" firstAttribute="centerX" secondItem="KXY-5a-E3U" secondAttribute="centerX" id="gKg-0A-ZfU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tpC-Tf-487" secondAttribute="trailing" constant="-20" id="gml-Iw-XN1"/>
+                            <constraint firstItem="LYc-U5-bFn" firstAttribute="top" secondItem="Lne-BH-dvC" secondAttribute="bottom" constant="8" id="gub-ym-fBg"/>
+                            <constraint firstItem="tpC-Tf-487" firstAttribute="top" secondItem="KXY-5a-E3U" secondAttribute="topMargin" id="ycd-ij-WV7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="tpC-Tf-487"/>
+                                <exclude reference="Lne-BH-dvC"/>
+                                <exclude reference="vUQ-Ny-V5t"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1xz-HU-4aU"/>
+                                <exclude reference="gub-ym-fBg"/>
+                                <exclude reference="gKg-0A-ZfU"/>
+                                <exclude reference="HFk-pD-OvY"/>
+                                <exclude reference="WR4-u2-Q5J"/>
+                                <exclude reference="AsE-Yu-Kvo"/>
+                                <exclude reference="gml-Iw-XN1"/>
+                                <exclude reference="ycd-ij-WV7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="tpC-Tf-487"/>
+                                <include reference="Lne-BH-dvC"/>
+                                <include reference="vUQ-Ny-V5t"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1xz-HU-4aU"/>
+                                <include reference="gub-ym-fBg"/>
+                                <include reference="gKg-0A-ZfU"/>
+                                <include reference="HFk-pD-OvY"/>
+                                <include reference="WR4-u2-Q5J"/>
+                                <include reference="AsE-Yu-Kvo"/>
+                                <include reference="gml-Iw-XN1"/>
+                                <include reference="ycd-ij-WV7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="vUQ-Ny-V5t" id="L54-MT-en5"/>
+                        <outlet property="collectionView" destination="tpC-Tf-487" id="F9j-VL-6jg"/>
+                        <outlet property="collectionViewFlowLayout" destination="IFM-Rw-QlN" id="BuE-tA-ipo"/>
+                        <outlet property="replyButton" destination="Lne-BH-dvC" id="oh4-qI-IuR"/>
+                        <segue destination="F3z-69-czq" kind="presentation" identifier="replyBlinkSegue" id="fT7-eO-202"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8I-Ae-lXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849.5" y="2549.25"/>
         </scene>
         <!--Main Feed View Controller-->
         <scene sceneID="KOA-wc-xkM">
@@ -363,7 +488,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iX-6P-mQ7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iX-6P-mQ7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -384,13 +509,13 @@
                                 <exclude reference="4iX-6P-mQ7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="RRS-jL-FaA"/>
                                 <exclude reference="4tZ-PA-TPJ"/>
                                 <exclude reference="Fft-fl-ahf"/>
                                 <exclude reference="pG3-Lb-j6p"/>
                                 <exclude reference="2FO-zj-5NI"/>
                                 <exclude reference="I7J-i2-1gE"/>
                                 <exclude reference="r5j-fU-gmb"/>
-                                <exclude reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -399,13 +524,13 @@
                                 <include reference="4iX-6P-mQ7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="RRS-jL-FaA"/>
                                 <include reference="4tZ-PA-TPJ"/>
                                 <include reference="Fft-fl-ahf"/>
                                 <include reference="pG3-Lb-j6p"/>
                                 <include reference="2FO-zj-5NI"/>
                                 <include reference="I7J-i2-1gE"/>
                                 <include reference="r5j-fU-gmb"/>
-                                <include reference="RRS-jL-FaA"/>
                             </mask>
                         </variation>
                     </view>
@@ -432,6 +557,7 @@
                         <outlet property="segmentFeed" destination="1fW-kU-c9p" id="zox-09-Hwz"/>
                         <outlet property="tableView" destination="4iX-6P-mQ7" id="Vcl-js-Ihz"/>
                         <segue destination="F3z-69-czq" kind="presentation" identifier="cameraSegue" id="Od1-QX-uue"/>
+                        <segue destination="K9t-ki-HFW" kind="presentation" identifier="detailRoomSegue" id="8Hx-Ub-E8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syW-rJ-b6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1287,7 +1413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cC6-Gf-mMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="1044.75"/>
+            <point key="canvasLocation" x="3360" y="-101.25"/>
         </scene>
         <!--Login-->
         <scene sceneID="jNC-aF-gPQ">
@@ -1471,7 +1597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJC-My-N98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578.5" y="315"/>
+            <point key="canvasLocation" x="2566.5" y="-831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KX1-gJ-9sp">
@@ -1489,7 +1615,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPJ-IG-gpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.5" y="315"/>
+            <point key="canvasLocation" x="1648.5" y="-831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nQu-dR-6hy">
@@ -1507,7 +1633,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jue-nz-AiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.5" y="1044.75"/>
+            <point key="canvasLocation" x="1648.5" y="-101.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uvF-tj-oqg">
@@ -1576,4 +1702,7 @@
         <image name="icon-text-camera" width="28" height="31"/>
         <image name="icon-undo-camera" width="28" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fT7-eO-202"/>
+    </inferredMetricsTieBreakers>
 </document>

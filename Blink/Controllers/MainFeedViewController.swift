@@ -15,6 +15,7 @@ class MainFeedViewController: UIViewController {
     @IBOutlet var newBlinkButton: UIButton!
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    var refreshTableView: UIRefreshControl!
     var rooms = Array<PFObject>()
     
     override func viewDidAppear(animated: Bool) {
@@ -23,6 +24,11 @@ class MainFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let navigationBarAppearance = self.navigationController?.navigationBar
+        navigationBarAppearance!.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
+        navigationBarAppearance!.shadowImage = UIImage()
+
         
         NSNotificationCenter.defaultCenter().addObserverForName(Notification.RefreshFeed.rawValue, object: nil, queue: nil) { (_) -> Void in
             self.fetchRooms()
@@ -33,6 +39,13 @@ class MainFeedViewController: UIViewController {
         
         tableView.registerNib(UINib(nibName: "RoomTableViewCell", bundle: nil), forCellReuseIdentifier: "cellRoom")
         tableView.dataSource = self
+        tableView.delegate = self
+        
+        refreshTableView = UIRefreshControl()
+        refreshTableView.addTarget(self, action: "fetchRooms", forControlEvents: UIControlEvents.ValueChanged)
+        refreshTableView.backgroundColor = UIColor.clearColor()
+        refreshTableView.tintColor = UIColor(red:0.99, green:0.36, blue:0.39, alpha:1)
+        tableView.addSubview(refreshTableView)
         
         segmentFeed.rac_signalForControlEvents(UIControlEvents.EditingChanged).subscribeNext { (_) -> Void in
             
@@ -46,12 +59,24 @@ class MainFeedViewController: UIViewController {
             self.performSegueWithIdentifier("cameraSegue", sender: nil)
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailRoomSegue" {
+            if let room = sender as? PFObject {
+                (segue.destinationViewController as! MediaDetailViewController).room = room
+            }
+        }
+    }
 }
 
 extension MainFeedViewController {
     
     func fetchRooms() {
         Room.fetchRooms().subscribeNext({ (next: AnyObject!) -> Void in
+            
+            if self.refreshTableView.refreshing {
+                self.refreshTableView.endRefreshing()
+            }
             
             if let rooms = next as? [PFObject] {
                 self.rooms = rooms
@@ -60,6 +85,9 @@ extension MainFeedViewController {
             }
             
             }) { (error: NSError!) -> Void in
+                if self.refreshTableView.refreshing {
+                    self.refreshTableView.endRefreshing()
+                }
                 print("error fetch rooms : \(error)")
         }
     }
@@ -74,7 +102,18 @@ extension MainFeedViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellRoom") as! RoomTableViewCell
         
-        cell.initRoomCell(rooms[indexPath.row])
+        cell.initRoomCell(rooms[indexPath.row], indexPath: indexPath)
         return cell
+    }
+}
+
+extension MainFeedViewController: UITableViewDelegate {
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("detailRoomSegue", sender: rooms[indexPath.row])
     }
 }

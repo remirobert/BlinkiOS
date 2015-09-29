@@ -15,19 +15,24 @@ class RoomTableViewCell: UITableViewCell {
     @IBOutlet var titleRoom: UILabel!
     @IBOutlet var detailCell: UILabel!
     
-    func initRoomCell(room: PFObject) {
+    func initRoomCell(room: PFObject, indexPath: NSIndexPath) {
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         self.titleRoom.text = room["title"] as? String
         
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+        self.detailCell.text = nil
+
+        if let username = room["username"] as? String {
+            self.detailCell.text = username
+        }
+        
+        self.numberUsers.text = "0"
+        if let numberMedias = room["numberMedias"] as? Int {
+            self.numberUsers.text = "\(numberMedias)"
+        }
+        
+        self.backgroundColor = Colors.colorForRow(indexPath.row)
         self.titleRoom.textColor = UIColor.whiteColor()
         self.detailCell.textColor = UIColor.whiteColor()
+        self.numberUsers.textColor = Colors.secondColorForRow(indexPath.row)
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

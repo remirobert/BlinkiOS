@@ -8,8 +8,8 @@
 
 import UIKit
 import PBJVision
-import jot
 import Masonry
+import Parse
 
 enum Drag {
     case Circle, None
@@ -22,6 +22,10 @@ class CameraPreviewViewController: UIViewController {
     var isDrag: Bool!
     var dragEnable = Drag.Circle
     var blinkData: BlinkData!
+    
+    var room: PFObject?
+    var parentController: UIViewController?
+    
     @IBOutlet var imagePreviewView: UIImageView!
     @IBOutlet var textEditButton: UIButton!
     @IBOutlet var backButton: UIButton!
@@ -92,7 +96,13 @@ class CameraPreviewViewController: UIViewController {
             
             let blink = BlinkData(positionX: positionX, positionY: positionY, sizeHole: sizeHole, message: text)
             self.blinkData = blink
-            self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
+            
+            if let _ = self.room {
+                self.addNewBlink()
+            }
+            else {
+                self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
+            }
         }
         
         manageSubView()
@@ -175,5 +185,23 @@ extension CameraPreviewViewController {
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         self.isDrag = false
         holeView.tapEnable = true
+    }
+}
+
+extension CameraPreviewViewController {
+    
+    func addNewBlink() {
+        Room.addNewBlinkToRoom(self.photo,
+            textImage: jotController.renderImage(),
+            blinkData: blinkData,
+            room: room!).subscribeNext({ (next: AnyObject!) -> Void in
+            
+                if let _ = next as? PFObject {
+                    UIApplication.changeApplicationRootController(self.parentController!)
+                }
+            
+            }) { (error: NSError!) -> Void in
+                print("error add new blink to room : \(error)")
+        }
     }
 }

@@ -10,17 +10,37 @@ import UIKit
 import Parse
 import ReactiveCocoa
 
-/*
-PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
-[query whereKey:@"students" equalTo:student];
-In this example, the student is a PFObject with a className that matches the relation in "students". If this is a relation of PFUsers and you're looking for the current user's "Teacher"s, you'd use:
-
-PFQuery *query = [PFQuery queryWithClassName:@"Teacher"];
-[query whereKey:@"students" equalTo:[PFUser currentUser]];
-*/
-
-
 class Room {
+    
+    class func fetchBlinkRoom(room: PFObject) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            
+            let relationMedia = room.relationForKey("contents")
+            let querryMedia = relationMedia.query()
+
+            querryMedia?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
+                if error != nil {
+                    subscriber.sendError(error)
+                    return
+                }
+                if let blinks = results {
+                    subscriber.sendNext(blinks)
+                    subscriber.sendCompleted()
+                }
+            })
+            return nil
+        })
+    }
+    
+    class func fetchPublicRoom() -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            let querry = PFQuery(className: "privateRoom")
+            querry.whereKey("public", equalTo: true)
+            querry.cachePolicy = PFCachePolicy.CacheThenNetwork
+            
+            return nil
+        })
+    }
     
     class func fetchRooms() -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
@@ -56,13 +76,44 @@ class Room {
         relationContents.addObject(blink)
     }
     
+    class func addNewBlinkToRoom(photo: UIImage, textImage: UIImage?, blinkData: BlinkData, room: PFObject) -> RACSignal {
+        return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
+            
+            Blink.createBlink(photo, textImage: textImage, blinkData: blinkData).subscribeNext({ (next: AnyObject!) -> Void in
+                
+                if let blink = next as? PFObject {
+                    addBlinkRoom(room, blink: blink)
+                    
+                    room.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                        if success && error == nil {
+                            subscriber.sendNext(room)
+                            subscriber.sendCompleted()
+                        }
+                        else {
+                            subscriber.sendError(error)
+                        }
+                    })
+                }
+                else {
+                    subscriber.sendError(nil)
+                }
+                
+                }, error: { (error: NSError!) -> Void in
+                    subscriber.sendError(error)
+            })
+            return nil
+        })
+    }
+    
     class func createNewRoom(title: String, blink: PFObject, participants: [PFObject]) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             let newRoom = PFObject(className: "privateRoom")
             newRoom.setValue(PFUser.currentUser(), forKey: "creator")
+            newRoom.setValue(PFUser.currentUser()!["trueUsername"] as? String, forKey: "username")
             newRoom.setValue(title, forKey: "title")
             newRoom.setValue(false, forKey: "public")
             newRoom.setValue(false, forKey: "global")
+            newRoom.setValue(1, forKey: "numberMedias")
             
             addParticipantRoom(newRoom, participants: participants)
             addBlinkRoom(newRoom, blink: blink)
@@ -84,7 +135,6 @@ class Room {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
 
             PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
-                
                 if error != nil {
                     subscriber.sendError(error)
                 }

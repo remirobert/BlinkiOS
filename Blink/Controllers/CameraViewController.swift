@@ -8,6 +8,7 @@
 
 import UIKit
 import PBJVision
+import Parse
 
 class CameraViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class CameraViewController: UIViewController {
     @IBOutlet var rotationCameraButton: UIButton!
     @IBOutlet var galleryCameraButton: UIButton!
     @IBOutlet var takePictureButton: UIButton!
+    
+    var room: PFObject?
+    var parentController: UIViewController?
     
     @IBAction func exitCameraController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -53,6 +57,8 @@ class CameraViewController: UIViewController {
             if let photo = sender as? UIImage {
                 print(sender)
                 (segue.destinationViewController as! CameraPreviewViewController).photo = photo
+                (segue.destinationViewController as! CameraPreviewViewController).room = room
+                (segue.destinationViewController as! CameraPreviewViewController).parentController = parentController
             }
         }
     }

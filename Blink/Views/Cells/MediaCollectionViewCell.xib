@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mediaCell" id="gTV-IL-0wX" customClass="MediaCollectionViewCell" customModule="Blink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-iW-OIo">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Y9x-iW-OIo" secondAttribute="trailing" id="1bT-U1-VDx"/>
+                <constraint firstItem="Y9x-iW-OIo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WcK-hL-NgS"/>
+                <constraint firstAttribute="bottom" secondItem="Y9x-iW-OIo" secondAttribute="bottom" id="Z8p-nW-u3g"/>
+                <constraint firstItem="Y9x-iW-OIo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oW6-C7-vfB"/>
+            </constraints>
+            <size key="customSize" width="341" height="519"/>
+            <connections>
+                <outlet property="mediaContent" destination="Y9x-iW-OIo" id="N9H-S4-9MQ"/>
+            </connections>
+            <point key="canvasLocation" x="334.5" y="392.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

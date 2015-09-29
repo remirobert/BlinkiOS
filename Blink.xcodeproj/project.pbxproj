@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D4431EE64AB163E022E5EA2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738FFFA01E4B5A064AFFC9F5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BB10E3AF1BB8D25500440616 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10E3AE1BB8D25500440616 /* Notification.swift */; settings = {ASSET_TAGS = (); }; };
+		BB10E3B21BB9327B00440616 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10E3B01BB9327B00440616 /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
+		BB10E3B31BB9327B00440616 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB10E3B11BB9327B00440616 /* Country.swift */; settings = {ASSET_TAGS = (); }; };
 		BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2915EF1BB38ABD00ED791E /* CameraPreviewViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB29161E1BB398F500ED791E /* JotDrawingContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB29160F1BB398F500ED791E /* JotDrawingContainer.m */; settings = {ASSET_TAGS = (); }; };
 		BB29161F1BB398F500ED791E /* JotDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2916111BB398F500ED791E /* JotDrawView.m */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +61,9 @@
 		BBF3844B1BAA784600EDF854 /* BlinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3844A1BAA784600EDF854 /* BlinkTests.swift */; };
 		BBF384561BAA784600EDF854 /* BlinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF384551BAA784600EDF854 /* BlinkUITests.swift */; };
 		BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBE7931BAA9F4500438AF9 /* Twilio.swift */; settings = {ASSET_TAGS = (); }; };
+		BBFE556B1BBA22A30055E31F /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE556A1BBA22A30055E31F /* MediaDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BBFE556E1BBA230F0055E31F /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE556C1BBA230F0055E31F /* MediaCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BBFE556F1BBA230F0055E31F /* MediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFE556D1BBA230F0055E31F /* MediaCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,8 @@
 		738FFFA01E4B5A064AFFC9F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB10E3AE1BB8D25500440616 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		BB10E3B01BB9327B00440616 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BB10E3B11BB9327B00440616 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BB2915EF1BB38ABD00ED791E /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		BB29160D1BB398F500ED791E /* jot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jot.h; sourceTree = "<group>"; };
 		BB29160E1BB398F500ED791E /* JotDrawingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JotDrawingContainer.h; sourceTree = "<group>"; };
@@ -147,6 +154,9 @@
 		BBF384571BAA784600EDF854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBFBE7911BAA9DD300438AF9 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		BBFBE7931BAA9F4500438AF9 /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
+		BBFE556A1BBA22A30055E31F /* MediaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
+		BBFE556C1BBA230F0055E31F /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		BBFE556D1BBA230F0055E31F /* MediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +258,8 @@
 				BB2915F31BB398D300ED791E /* JotController */,
 				BB2BCBE81BB15AB7005343B3 /* WaitBlock.swift */,
 				BB10E3AE1BB8D25500440616 /* Notification.swift */,
+				BB10E3B01BB9327B00440616 /* Colors.swift */,
+				BB10E3B11BB9327B00440616 /* Country.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -302,6 +314,8 @@
 				BB2BCBED1BB2FACB005343B3 /* FriendTableViewCell.xib */,
 				BB29162C1BB4D19D00ED791E /* SelectTableViewCell.swift */,
 				BB29162D1BB4D19D00ED791E /* SelectTableViewCell.xib */,
+				BBFE556C1BBA230F0055E31F /* MediaCollectionViewCell.swift */,
+				BBFE556D1BBA230F0055E31F /* MediaCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -336,6 +350,7 @@
 		BBE4986B1BAA7A05008A8ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBFE55691BBA228F0055E31F /* Medias */,
 				BB2BCBF01BB38487005343B3 /* Camera */,
 				BB71035D1BB060E100C31028 /* Friends */,
 				BBE498751BAA97A2008A8ECF /* StartupControllers */,
@@ -457,6 +472,14 @@
 			path = Twilio;
 			sourceTree = "<group>";
 		};
+		BBFE55691BBA228F0055E31F /* Medias */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE556A1BBA22A30055E31F /* MediaDetailViewController.swift */,
+			);
+			name = Medias;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -566,6 +589,7 @@
 				BBF384401BAA784600EDF854 /* LaunchScreen.storyboard in Resources */,
 				BB2BCBEF1BB2FACB005343B3 /* FriendTableViewCell.xib in Resources */,
 				BBF3843D1BAA784600EDF854 /* Assets.xcassets in Resources */,
+				BBFE556F1BBA230F0055E31F /* MediaCollectionViewCell.xib in Resources */,
 				BB2BCBE61BB13B44005343B3 /* SearchUserTableViewCell.xib in Resources */,
 				BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */,
 				BBF3843B1BAA784600EDF854 /* Main.storyboard in Resources */,
@@ -646,6 +670,7 @@
 				BB4288D21BAAABA700B211F6 /* Alert.swift in Sources */,
 				BBFBE7941BAA9F4500438AF9 /* Twilio.swift in Sources */,
 				BB29D3261BABF5F1005E6E2C /* Room.swift in Sources */,
+				BBFE556B1BBA22A30055E31F /* MediaDetailViewController.swift in Sources */,
 				BB2916231BB398F500ED791E /* JotTouchPoint.m in Sources */,
 				BB2BCBE51BB13B44005343B3 /* SearchUserTableViewCell.swift in Sources */,
 				BB2BCBE91BB15AB7005343B3 /* WaitBlock.swift in Sources */,
@@ -666,10 +691,13 @@
 				BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */,
 				BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */,
 				BB2BCBEE1BB2FACB005343B3 /* FriendTableViewCell.swift in Sources */,
+				BB10E3B21BB9327B00440616 /* Colors.swift in Sources */,
 				BB2BCBF21BB38495005343B3 /* CameraViewController.swift in Sources */,
 				BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */,
 				BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */,
+				BB10E3B31BB9327B00440616 /* Country.swift in Sources */,
 				BB7103631BB0621100C31028 /* Friend.swift in Sources */,
+				BBFE556E1BBA230F0055E31F /* MediaCollectionViewCell.swift in Sources */,
 				BB29D3221BABF3E9005E6E2C /* TextDrawer.swift in Sources */,
 				BB4288CF1BAAA71800B211F6 /* User.swift in Sources */,
 				BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */,

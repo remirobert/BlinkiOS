@@ -15,4 +15,10 @@ extension UIApplication {
             application.window?.rootViewController = UIStoryboard.instanceController(controllerIdentifier)
         }
     }
+    
+    class func changeApplicationRootController(controller: UIViewController) {
+        if let application =  self.sharedApplication().delegate as? AppDelegate {
+            application.window?.rootViewController = controller
+        }
+    }
 }

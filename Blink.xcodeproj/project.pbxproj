@@ -48,6 +48,7 @@
 		BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71035E1BB0610700C31028 /* FriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7103611BB0616A00C31028 /* SearchFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7103631BB0621100C31028 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103621BB0621100C31028 /* Friend.swift */; settings = {ASSET_TAGS = (); }; };
+		BBC2C6601BBA339F004C09FA /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C65F1BBA339F004C09FA /* PreviewView.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE4986E1BAA7E1D008A8ECF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498711BAA9794008A8ECF /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BBE498741BAA979E008A8ECF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE498731BAA979E008A8ECF /* SignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -134,6 +135,7 @@
 		BB71035E1BB0610700C31028 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendsViewController.swift; sourceTree = "<group>"; };
 		BB7103621BB0621100C31028 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		BBC2C65F1BBA339F004C09FA /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		BBE4986D1BAA7E1D008A8ECF /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBE498711BAA9794008A8ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE498731BAA979E008A8ECF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				BB4288D81BAABA0D00B211F6 /* ViewsHelpers */,
 				BB7103591BB0448100C31028 /* InputTextfield.swift */,
 				BB2916261BB3A5C900ED791E /* HoleView.swift */,
+				BBC2C65F1BBA339F004C09FA /* PreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */,
 				BB4288D61BAAB8D400B211F6 /* MainFeedViewController.swift in Sources */,
 				BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */,
+				BBC2C6601BBA339F004C09FA /* PreviewView.swift in Sources */,
 				BB29162E1BB4D19E00ED791E /* SelectTableViewCell.swift in Sources */,
 				BB29161F1BB398F500ED791E /* JotDrawView.m in Sources */,
 				BB2915F01BB38ABD00ED791E /* CameraPreviewViewController.swift in Sources */,

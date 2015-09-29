@@ -17,7 +17,8 @@ class Room {
             
             let relationMedia = room.relationForKey("contents")
             let querryMedia = relationMedia.query()
-
+            querryMedia?.orderByDescending("createdAt")
+            
             querryMedia?.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
                 if error != nil {
                     subscriber.sendError(error)
@@ -46,6 +47,7 @@ class Room {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             let querry = PFQuery(className: "privateRoom")
             querry.whereKey("participants", equalTo: PFUser.currentUser()!)
+            querry.orderByDescending("updatedAt")
             querry.cachePolicy = PFCachePolicy.CacheThenNetwork
             
             querry.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in

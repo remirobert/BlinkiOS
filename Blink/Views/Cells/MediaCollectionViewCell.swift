@@ -12,7 +12,7 @@ import Parse
 class MediaCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var mediaContent: UIImageView!
-
+    var previewContent: PreviewView!
     
     func initBlinkContent(blink: PFObject) {
         mediaContent.image = nil
@@ -26,7 +26,16 @@ class MediaCollectionViewCell: UICollectionViewCell {
                     return
                 }
                 if let dataImage = data, let image = UIImage(data: dataImage) {
+                    
+                    if self.previewContent == nil {
+                        self.previewContent = PreviewView()
+                        self.previewContent.frame.origin = CGPointZero
+                        self.previewContent.frame.size = UIScreen.mainScreen().bounds.size
+                        
+                    }
+                    self.previewContent.loadContent(blink, photo: image, text: nil)
                     self.mediaContent.image = image
+                    self.contentView.addSubview(self.previewContent)
                 }
             })
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Masonry
 import Parse
 
 class RoomTableViewCell: UITableViewCell {

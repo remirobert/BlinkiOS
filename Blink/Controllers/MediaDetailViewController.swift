@@ -26,6 +26,10 @@ class MediaDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserverForName("refreshBlink", object: nil, queue: nil) { (_) -> Void in
+            self.fetchBlink()
+        }
+        
         collectionViewFlowLayout.itemSize = UIScreen.mainScreen().bounds.size
         collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         

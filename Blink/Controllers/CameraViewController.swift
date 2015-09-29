@@ -28,6 +28,10 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserverForName("dismissCameraController", object: nil, queue: nil) { (_) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
         previewLayer = PBJVision.sharedInstance().previewLayer
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         previewLayer.frame = previewView.bounds

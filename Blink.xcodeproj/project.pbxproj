@@ -44,6 +44,7 @@
 		BB4288DC1BAABA7300B211F6 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BB4288DD1BAABA7300B211F6 /* RoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		BB4288DF1BAAC67700B211F6 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4288DE1BAAC67700B211F6 /* Progress.swift */; settings = {ASSET_TAGS = (); }; };
+		BB5437F51BC21A1100AC1DBE /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5437F41BC21A1100AC1DBE /* PushNotification.swift */; settings = {ASSET_TAGS = (); }; };
 		BB71035A1BB0448100C31028 /* InputTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103591BB0448100C31028 /* InputTextfield.swift */; settings = {ASSET_TAGS = (); }; };
 		BB71035F1BB0610700C31028 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71035E1BB0610700C31028 /* FriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB7103611BB0616A00C31028 /* SearchFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +132,7 @@
 		BB4288DA1BAABA7300B211F6 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		BB4288DB1BAABA7300B211F6 /* RoomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomTableViewCell.xib; sourceTree = "<group>"; };
 		BB4288DE1BAAC67700B211F6 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		BB5437F41BC21A1100AC1DBE /* PushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		BB7103591BB0448100C31028 /* InputTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextfield.swift; sourceTree = "<group>"; };
 		BB71035E1BB0610700C31028 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		BB7103601BB0616A00C31028 /* SearchFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFriendsViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				BB10E3AE1BB8D25500440616 /* Notification.swift */,
 				BB10E3B01BB9327B00440616 /* Colors.swift */,
 				BB10E3B11BB9327B00440616 /* Country.swift */,
+				BB5437F41BC21A1100AC1DBE /* PushNotification.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				BB29D3231BABF3E9005E6E2C /* TextEditView.swift in Sources */,
 				BBE498771BAA97CD008A8ECF /* SignupNicknameViewController.swift in Sources */,
 				BBEF368B1BB5591900319788 /* File.swift in Sources */,
+				BB5437F51BC21A1100AC1DBE /* PushNotification.swift in Sources */,
 				BB2916291BB3ACE900ED791E /* SelectFriendsViewController.swift in Sources */,
 				BBE498721BAA9794008A8ECF /* LoginViewController.swift in Sources */,
 				BB2916221BB398F500ED791E /* JotTouchBezier.m in Sources */,

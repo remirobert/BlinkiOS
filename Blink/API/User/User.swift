@@ -82,6 +82,7 @@ class User {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             PFUser.logInWithUsernameInBackground(phoneNumber, password: phoneNumber, block: { (user: PFUser?, error: NSError?) -> Void in
                 if let user = user where error == nil {
+                    PushNotification.addUserChannel()
                     subscriber.sendNext(user)
                 }
                 else {

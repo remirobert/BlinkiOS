@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controller = UIStoryboard.instanceController("startupController")
         }
         else {
+            PushNotification.addUserChannel()
             controller = UIStoryboard.instanceController("mainController")
         }
 
@@ -57,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
-        installation.channels = ["gloabal"]
+        installation.channels = ["gloabal", "devTest"]
         installation.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if error != nil {
                 print("[NOTIFICATION]: Error register notification token")
@@ -69,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("[NOTIFICATION]: failed register notification token")
             }
         }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
 }
 

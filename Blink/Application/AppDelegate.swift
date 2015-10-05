@@ -54,14 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
-        
-        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-        [currentInstallation setDeviceTokenFromData:deviceToken];
-        currentInstallation.channels = @[@"global"];
-        [currentInstallation saveInBackground];
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.channels = ["gloabal"]
+        installation.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if error != nil {
+                print("[NOTIFICATION]: Error register notification token")
+            }
+            if success {
+                print("[NOTIFICATION]: Success register notification token")
+            }
+            else {
+                print("[NOTIFICATION]: failed register notification token")
+            }
+        }
     }
 }
 

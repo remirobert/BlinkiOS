@@ -15,6 +15,7 @@ class MediaDetailViewController: UIViewController {
     @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var replyButton: UIButton!
+    @IBOutlet var labelMessage: UILabel!
     
     var room: PFObject!
     var blinks = Array<PFObject>()
@@ -28,6 +29,11 @@ class MediaDetailViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserverForName("refreshBlink", object: nil, queue: nil) { (_) -> Void in
             self.fetchBlink()
+        }
+        
+        labelMessage.text = ""
+        if let message = room["title"] as? String {
+            labelMessage.text = message
         }
         
         collectionViewFlowLayout.itemSize = UIScreen.mainScreen().bounds.size
@@ -63,6 +69,10 @@ extension MediaDetailViewController: UICollectionViewDataSource {
         
         let currentBlink = blinks[indexPath.row]
         cell.initBlinkContent(currentBlink)
+        
+        cell.blockHide = { self.animationDesappear() }
+        cell.blockShow = { self.animationAppear() }
+        
         return cell
     }
 }
@@ -80,5 +90,24 @@ extension MediaDetailViewController {
             }) { (error: NSError!) -> Void in
                 print("error fetched blinks : \(error)")
         }
+    }
+}
+
+extension MediaDetailViewController {
+    
+    func animationDesappear() {        
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.replyButton.frame.origin.y = CGRectGetHeight(UIScreen.mainScreen().bounds)
+            self.backButton.frame.origin.y = -CGRectGetHeight(self.backButton.frame)
+            self.labelMessage.frame.origin.y = -CGRectGetHeight(self.labelMessage.frame)
+        }
+    }
+    
+    func animationAppear() {
+        UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            self.replyButton.frame.origin.y = CGRectGetHeight(UIScreen.mainScreen().bounds) - (CGRectGetHeight(self.replyButton.frame) + 8)
+            self.backButton.frame.origin.y = 18
+            self.labelMessage.frame.origin.y = 18
+            }, completion: nil)
     }
 }

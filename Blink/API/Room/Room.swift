@@ -36,9 +36,17 @@ class Room {
     class func fetchPublicRoom() -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
             let querry = PFQuery(className: "privateRoom")
-            querry.whereKey("public", equalTo: true)
+            querry.whereKey("global", equalTo: true)
+            querry.addDescendingOrder("updatedAt")
             querry.cachePolicy = PFCachePolicy.CacheThenNetwork
             
+            querry.findObjectsInBackgroundWithBlock({ (results: [PFObject]?, error: NSError?) -> Void in
+                if error != nil {
+                    subscriber.sendError(error)
+                }
+                subscriber.sendNext(results)
+                subscriber.sendCompleted()
+            })
             return nil
         })
     }
@@ -117,7 +125,9 @@ class Room {
             newRoom.setValue(false, forKey: "global")
             newRoom.setValue(1, forKey: "numberMedias")
             
-            addParticipantRoom(newRoom, participants: participants)
+            if participants.count > 1 {
+                addParticipantRoom(newRoom, participants: participants)
+            }
             addBlinkRoom(newRoom, blink: blink)
             
             newRoom.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
@@ -133,7 +143,7 @@ class Room {
         })
     }
     
-    class func makeRoomPublic(room: PFObject, distance: String) -> RACSignal {
+    class func makeRoomPublic(room: PFObject) -> RACSignal {
         return RACSignal.createSignal({ (subscriber: RACSubscriber!) -> RACDisposable! in
 
             PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
@@ -143,12 +153,7 @@ class Room {
                 if let geoPoint = geoPoint {
                     room.setValue(geoPoint, forKey: "position")
                     room.setValue(true, forKey: "public")
-                    if distance == "Nearby (<25km)" {
-                        room.setValue(false, forKey: "global")
-                    }
-                    else {
-                        room.setValue(true, forKey: "global")
-                    }
+                    room.setValue(true, forKey: "global")
                     
                     room.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                         if success && error == nil {

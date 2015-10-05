@@ -13,6 +13,8 @@ class MediaCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var mediaContent: UIImageView!
     var previewContent: PreviewView!
+    var blockHide: (() -> ())?
+    var blockShow: (() -> ())?
     
     func initBlinkContent(blink: PFObject) {
         mediaContent.image = nil
@@ -34,10 +36,22 @@ class MediaCollectionViewCell: UICollectionViewCell {
                         
                     }
                     self.previewContent.loadContent(blink, photo: image, text: nil)
+                    self.previewContent.delegate = self
                     self.mediaContent.image = image
                     self.contentView.addSubview(self.previewContent)
                 }
             })
         }
+    }
+}
+
+extension MediaCollectionViewCell: PreviewViewDelegate {
+    
+    func displayPreview() {
+        self.blockHide?()
+    }
+    
+    func hideDisplay() {
+        self.blockShow?()
     }
 }

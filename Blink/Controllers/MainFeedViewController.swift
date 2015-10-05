@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ReactiveCocoa
 
 class MainFeedViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class MainFeedViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var refreshTableView: UIRefreshControl!
     var rooms = Array<PFObject>()
+    var publicRooms = Array<PFObject>()
     
     override func viewDidAppear(animated: Bool) {
         fetchRooms()
@@ -47,8 +49,8 @@ class MainFeedViewController: UIViewController {
         refreshTableView.tintColor = UIColor(red:0.99, green:0.36, blue:0.39, alpha:1)
         tableView.addSubview(refreshTableView)
         
-        segmentFeed.rac_signalForControlEvents(UIControlEvents.EditingChanged).subscribeNext { (_) -> Void in
-            
+        segmentFeed.rac_signalForControlEvents(UIControlEvents.ValueChanged).subscribeNext { (_) -> Void in
+            self.tableView.reloadData()
         }
         
         newBlinkButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
@@ -90,19 +92,45 @@ extension MainFeedViewController {
                 }
                 print("error fetch rooms : \(error)")
         }
+        
+        Room.fetchPublicRoom().subscribeNext({ (next: AnyObject!) -> Void in
+            
+            if self.refreshTableView.refreshing {
+                self.refreshTableView.endRefreshing()
+            }
+            
+            if let rooms = next as? [PFObject] {
+                self.publicRooms = rooms
+                self.tableView.reloadData()
+            }
+            
+            }) { (error: NSError!) -> Void in
+                if self.refreshTableView.refreshing {
+                    self.refreshTableView.endRefreshing()
+                }
+                print("error fetch rooms : \(error)")
+        }
     }
 }
 
 extension MainFeedViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rooms.count
+        if segmentFeed.selectedSegmentIndex == 0 {
+            return rooms.count
+        }
+        return publicRooms.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellRoom") as! RoomTableViewCell
         
-        cell.initRoomCell(rooms[indexPath.row], indexPath: indexPath)
+        if segmentFeed.selectedSegmentIndex == 0 {
+            cell.initRoomCell(rooms[indexPath.row], indexPath: indexPath)
+        }
+        else {
+            cell.initRoomCell(publicRooms[indexPath.row], indexPath: indexPath)
+        }
         return cell
     }
 }
@@ -114,6 +142,11 @@ extension MainFeedViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("detailRoomSegue", sender: rooms[indexPath.row])
+        if segmentFeed.selectedSegmentIndex == 0 {
+            performSegueWithIdentifier("detailRoomSegue", sender: rooms[indexPath.row])
+        }
+        else {
+            performSegueWithIdentifier("detailRoomSegue", sender: publicRooms[indexPath.row])
+        }
     }
 }

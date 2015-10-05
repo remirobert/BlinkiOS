@@ -496,6 +496,7 @@
 				BBF384301BAA784600EDF854 /* Resources */,
 				E8CCC2740427840A371C0183 /* Embed Pods Frameworks */,
 				21E49581BF82B00FF9BBE069 /* Copy Pods Resources */,
+				BB95D9981BBE7B7800F7F6E9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -553,6 +554,7 @@
 				TargetAttributes = {
 					BBF384311BAA784600EDF854 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 44Q2J6374R;
 					};
 					BBF384451BAA784600EDF854 = {
 						CreatedOnToolsVersion = 7.0;
@@ -646,6 +648,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BB95D9981BBE7B7800F7F6E9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" d9291a9165795274a4a0ad9f612bfafae0b9685d 054127c9bafbcc58f894717f58d5d0544364c4499e266bb0bebef0905ebfb097";
 		};
 		E8CCC2740427840A371C0183 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -858,12 +873,15 @@
 			baseConfigurationReference = 8044A844A3E2BCF646D2958E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Remi Robert (X7FSUL94M6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Remi Robert (X7FSUL94M6)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Blink/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remirobert.blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "527e1b38-27cd-4b97-975b-1ecfa41670ae";
 				SWIFT_OBJC_BRIDGING_HEADER = Blink/Application/Header.h;
 			};
 			name = Debug;
@@ -873,12 +891,15 @@
 			baseConfigurationReference = 667B62A522C95D039ADDD65B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Remi Robert (X7FSUL94M6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Remi Robert (X7FSUL94M6)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Blink/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = remirobert.Blink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remirobert.blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "527e1b38-27cd-4b97-975b-1ecfa41670ae";
 				SWIFT_OBJC_BRIDGING_HEADER = Blink/Application/Header.h;
 			};
 			name = Release;

@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import PBJVision
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,7 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Fabric.with([Crashlytics.self()])
         Parse.setApplicationId("DU6edKCcIY9jOtr6ETShTM3FQr9vyYpzXDKJ6SAf", clientKey: "YPptEdeHL3EgJcNEPBI6m6HsVlGYpGBGmQIKX2Oh")
+        
+        let pushSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(pushSettings)
+        application.registerForRemoteNotifications()
         
         var controller: UIViewController!
         
@@ -44,6 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PBJVision.sharedInstance().startPreview()
         applicationAppaerence()
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        
+        let installation = PFInstallation.currentInstallation()
+        
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation setDeviceTokenFromData:deviceToken];
+        currentInstallation.channels = @[@"global"];
+        [currentInstallation saveInBackground];
     }
 }
 

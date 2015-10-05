@@ -3,6 +3,10 @@ PODS:
   - ChameleonFramework (1.2.1):
     - ChameleonFramework/Default (= 1.2.1)
   - ChameleonFramework/Default (1.2.1)
+  - Crashlytics (3.3.3)
+  - Fabric (1.5.4):
+    - Fabric/Base (= 1.5.4)
+  - Fabric/Base (1.5.4)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - Parse (1.8.4):
@@ -24,6 +28,8 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework
+  - Crashlytics
+  - Fabric
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - Parse
@@ -34,6 +40,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
   ChameleonFramework: 3476f813ac1615aef0a9a958f05520dfca47e09d
+  Crashlytics: 9120a5c1515655e57a65e565e2eae8dd326be2e9
+  Fabric: 93e3053474839d8df33a61a29c328a48c83792c8
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: c09d6efe4b2eea752765bc6f365a55516d909079
@@ -42,4 +50,4 @@ SPEC CHECKSUMS:
   Result: af24e3e57ab81005ec4221a53fd36dc1e7a52869
   TwilioSDK: 49ef46cd8bef7f05f1e3bdb003e400d77c675673
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.38.2

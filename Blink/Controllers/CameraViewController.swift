@@ -39,6 +39,7 @@ class CameraViewController: UIViewController {
         
         let vision = PBJVision.sharedInstance()
         vision.delegate = self
+        vision.cameraDevice = PBJCameraDevice.Back
         vision.cameraMode = PBJCameraMode.Photo
         vision.cameraOrientation = PBJCameraOrientation.Portrait
         vision.outputFormat = PBJOutputFormat.Widescreen

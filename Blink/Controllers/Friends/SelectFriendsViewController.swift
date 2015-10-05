@@ -13,16 +13,14 @@ import ReactiveCocoa
 class SelectFriendsViewController: UIViewController {
 
     @IBOutlet var tableViewFriend: UITableView!
-    @IBOutlet var tableViewPlace: UITableView!
     @IBOutlet var selectionLabel: UILabel!
     @IBOutlet var sendButton: UIButton!
-    @IBOutlet var segmentSelection: UISegmentedControl!
     @IBOutlet var sendBlink: UIButton!
+    @IBOutlet var switchPublicRoom: UISwitch!
     
     var friends = Array<PFObject>()
     var friendsSelected = Array<PFObject>()
     var placesCellData = ["Nearby (<25km)", "Far far away"]
-    var placeSelected: String?
     
     var blink: BlinkData!
     var imagePhoto: UIImage!
@@ -33,7 +31,7 @@ class SelectFriendsViewController: UIViewController {
     }
     
     func updateDisplaySelection() {
-        if friendsSelected.count == 0 && placeSelected == nil {
+        if friendsSelected.count == 0 && switchPublicRoom.on == false {
             sendBlink.hidden = true
         }
         else {
@@ -53,8 +51,7 @@ class SelectFriendsViewController: UIViewController {
         super.viewDidLoad()
         
         initTableView(tableViewFriend)
-        initTableView(tableViewPlace)
-        tableViewPlace.hidden = true
+        updateDisplayLabelSelected()
         
         Friend.friends(PFCachePolicy.CacheThenNetwork).subscribeNext({ (next: AnyObject!) -> Void in
             
@@ -67,19 +64,12 @@ class SelectFriendsViewController: UIViewController {
             }) { () -> Void in
         }
         
-        segmentSelection.rac_signalForControlEvents(UIControlEvents.ValueChanged).subscribeNext { (_) -> Void in
-            if self.segmentSelection.selectedSegmentIndex == 0 {
-                self.tableViewPlace.hidden = true
-                self.tableViewFriend.hidden = false
-            }
-            else {
-                self.tableViewFriend.hidden = true
-                self.tableViewPlace.hidden = false
-            }
-        }
-        
         sendBlink.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
             self.createBlink()
+        }
+        
+        switchPublicRoom.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (_) -> Void in
+            self.updateDisplayLabelSelected()
         }
     }
 }
@@ -97,34 +87,20 @@ extension SelectFriendsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if tableView.tag == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("selectCell") as! SelectTableViewCell
-            
-            let currentFriend = friends[indexPath.row]
-            if let username = currentFriend["trueUsername"] as? String {
-                cell.initCell(username)
-            }
-            
-            if friendsSelected.contains(currentFriend) {
-                cell.selectCell()
-            }
-            else {
-                cell.deselectCell()
-            }
-            return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("selectCell") as! SelectTableViewCell
+        
+        let currentFriend = friends[indexPath.row]
+        if let username = currentFriend["trueUsername"] as? String {
+            cell.initCell(username)
+        }
+        
+        if friendsSelected.contains(currentFriend) {
+            cell.selectCell()
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("selectCell") as! SelectTableViewCell
-            
-            cell.initCell(placesCellData[indexPath.row])
             cell.deselectCell()
-            if let selectedPlace = placeSelected {
-                if selectedPlace == placesCellData[indexPath.row] {
-                    cell.selectCell()
-                }
-            }
-            return cell
         }
+        return cell
     }
 }
 
@@ -133,36 +109,15 @@ extension SelectFriendsViewController: UITableViewDataSource {
 extension SelectFriendsViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if tableView.tag == 0 {
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectTableViewCell {
-                cell.deselectCell()
-                removeFriendSelected(friends[indexPath.row])
-            }
-        }
-        else {
-            placeSelected = nil
-            updateDisplayLabelSelected()
-            tableViewPlace.reloadData()
-        }
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SelectTableViewCell
+        cell.deselectCell()
+        removeFriendSelected(friends[indexPath.row])
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if tableView.tag == 0 {
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SelectTableViewCell {
-                cell.selectCell()
-                addFriendSelected(friends[indexPath.row])
-            }
-        }
-        else {
-            if placeSelected == placesCellData[indexPath.row] {
-                placeSelected = nil
-            }
-            else {
-                placeSelected = placesCellData[indexPath.row]
-            }
-            updateDisplayLabelSelected()
-            tableViewPlace.reloadData()
-        }
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SelectTableViewCell
+        cell.selectCell()
+        addFriendSelected(friends[indexPath.row])
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -206,13 +161,21 @@ extension SelectFriendsViewController {
                 self.friendsSelected.append(PFUser.currentUser()!)
                 
                 Room.createNewRoom(self.blink.message, blink: blink, participants: self.friendsSelected).subscribeNext({ (next: AnyObject!) -> Void in
+                    
+                    print("room created : \(next)")
+                    
                     if let room = next as? PFObject {
                         
-                        if let placeSelected = self.placeSelected {
-                            Room.makeRoomPublic(room, distance: placeSelected).subscribeNext({ (next: AnyObject!) -> Void in
+                        if self.switchPublicRoom.on {
+                            Room.makeRoomPublic(room).subscribeNext({ (next: AnyObject!) -> Void in
                                 
-                                print("creation room success")
-                                return
+                                if let _  = next as? PFObject {
+                                    print("creation public room success")
+                                    return
+                                }
+                                else {
+                                    print("error make public room")
+                                }
                                 
                                 }, error: { (error: NSError!) -> Void in
                                     print("error make room public : \(error)")

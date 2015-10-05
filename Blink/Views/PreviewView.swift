@@ -143,9 +143,6 @@ class PreviewView: UIView {
         let center = self.holeView.center
         let animationDuration = 1.5
         
-        self.holeView.layer.removeAllAnimations()
-        self.holeView.updatePostion()
-        
         let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
         cornerRadiusAnimation.fromValue = self.holeView.layer.cornerRadius
         cornerRadiusAnimation.toValue = newSize / 2
@@ -182,7 +179,7 @@ class PreviewView: UIView {
         cornerRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         cornerRadiusAnimation.fillMode = kCAFillModeBoth
         holeView.layer.addAnimation(cornerRadiusAnimation, forKey: "animation")
-        holeView.layer.cornerRadius = newSize / 2
+//        holeView.layer.cornerRadius = newSize / 2
         
         
         UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
@@ -202,32 +199,28 @@ class PreviewView: UIView {
         
         switch gesture.state {
         case UIGestureRecognizerState.Began:
-            self.animationHole()
-            
-            
-//            if let block = blockDisplay {
-//                block()
-//            }
-//            delegate?.displayPreview()
-//            self.rezStateHoleView()
-//            UIView.animateWithDuration(0.5, animations: { () -> Void in
-//                self.textDrawerImageView.alpha = 0
-//            })
-//            if let _ = self.timer {
-//                self.timer.invalidate()
-//            }
-//            self.holeView.frame.size = CGSizeMake(self.holeSize, self.holeSize)
-//            self.holeView.layer.cornerRadius = self.holeSize / 2
-//            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "animatedView", userInfo: nil, repeats: true)
+            if let block = blockDisplay {
+                block()
+            }
+            delegate?.displayPreview()
+            self.rezStateHoleView()
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.textDrawerImageView.alpha = 0
+            })
+            if let _ = self.timer {
+                self.timer.invalidate()
+            }
+            self.holeView.frame.size = CGSizeMake(self.holeSize, self.holeSize)
+            self.holeView.layer.cornerRadius = self.holeSize / 2
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "animatedView", userInfo: nil, repeats: true)
 
         case UIGestureRecognizerState.Cancelled, UIGestureRecognizerState.Ended, UIGestureRecognizerState.Failed:
             if let block = blockHide {
                 block()
             }
-            self.animationBackHole()
-//            delegate?.hideDisplay()
-//            self.timer.invalidate()
-//            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "unAnimatedView", userInfo: nil, repeats: true)
+            delegate?.hideDisplay()
+            self.timer.invalidate()
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "unAnimatedView", userInfo: nil, repeats: true)
             
         default:Void()
         }

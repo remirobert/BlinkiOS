@@ -27,11 +27,28 @@ class PushNotification {
         }
     }
     
-    class func pushNotification() {
+    class func new(room: PFObject) {
+        let participantsRelation = room.relationForKey("participants")
+        participantsRelation.query()?.findObjectsInBackgroundWithBlock({ (results:[PFObject]?, error: NSError?) -> Void in
+            if error != nil {
+                print("[PFPUSH] Error find participants : \(error)")
+                return
+            }
+            if let users = results {
+                var userIds = Array<String>()
+                for currentUser in users {
+                    userIds.append("c\(currentUser.objectId!)")
+                }
+                sendNotification(userIds, message: "New blink !")
+            }
+        })
+    }
+    
+    class func sendNotification(channels: [String], message: String) {
         let pushNotification = PFPush()
-        let dataNotification = ["alert":"salut", "sound": "default"]
+        let dataNotification = ["alert": message, "sound": "default"]
         
-        pushNotification.setChannels([])
+        pushNotification.setChannels(channels)
         pushNotification.setData(dataNotification)
         
         pushNotification.sendPushInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in

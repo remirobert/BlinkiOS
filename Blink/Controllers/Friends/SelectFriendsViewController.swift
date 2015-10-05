@@ -169,7 +169,8 @@ extension SelectFriendsViewController {
                         if self.switchPublicRoom.on {
                             Room.makeRoomPublic(room).subscribeNext({ (next: AnyObject!) -> Void in
                                 
-                                if let _  = next as? PFObject {
+                                if let room = next as? PFObject {
+                                    PushNotification.new(room)
                                     print("creation public room success")
                                     return
                                 }

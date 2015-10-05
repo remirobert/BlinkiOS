@@ -198,6 +198,9 @@ extension CameraPreviewViewController {
             
                 print("object : \(next)")
                 if let _ = next as? PFObject {
+                    
+                    PushNotification.new(self.room!)
+                    
                     self.dismissViewControllerAnimated(true, completion: {
                         NSNotificationCenter.defaultCenter().postNotificationName("dismissCameraController", object: nil)
                         NSNotificationCenter.defaultCenter().postNotificationName("refreshBlink", object: nil)

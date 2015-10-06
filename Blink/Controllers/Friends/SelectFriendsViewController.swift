@@ -72,6 +72,12 @@ class SelectFriendsViewController: UIViewController {
             self.updateDisplayLabelSelected()
         }
     }
+    
+    func dismissController() {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            NSNotificationCenter.defaultCenter().postNotificationName("dismissCameraController", object: nil)
+        })
+    }
 }
 
 //MARK:
@@ -155,6 +161,9 @@ extension SelectFriendsViewController {
 extension SelectFriendsViewController {
     
     func createBlink() {
+        
+        let hud = Progress.show(self.view, message: "Posting your amazing content")
+        
         Blink.createBlink(self.imagePhoto, textImage: self.imageText, blinkData: self.blink).subscribeNext({ (next: AnyObject!) -> Void in
             
             if let blink = next as? PFObject {
@@ -171,28 +180,37 @@ extension SelectFriendsViewController {
                                 
                                 if let room = next as? PFObject {
                                     PushNotification.new(room)
+                                    hud.hide(true)
+                                    self.dismissController()
+                                    
                                     print("creation public room success")
                                     return
                                 }
                                 else {
+                                    hud.hide(true)
                                     print("error make public room")
                                 }
                                 
                                 }, error: { (error: NSError!) -> Void in
+                                    hud.hide(true)
                                     print("error make room public : \(error)")
                             })
                         }
                         else {
+                            hud.hide(true)
+                            self.dismissController()
                             print("creation room success")
                             return
                         }
                     }
                     }, error: { (error: NSError!) -> Void in
+                        hud.hide(true)
                         print("error create room : \(error)")
                 })
             }
             
             }, error: { (error: NSError!) -> Void in
+                hud.hide(true)
                 print("error create blink : \(error)")
         })
     }

@@ -29,7 +29,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserverForName("dismissCameraController", object: nil, queue: nil) { (_) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(false, completion: nil)
         }
         
         previewLayer = PBJVision.sharedInstance().previewLayer

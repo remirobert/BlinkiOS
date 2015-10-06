@@ -16,9 +16,11 @@ class MainFeedViewController: UIViewController {
     @IBOutlet var newBlinkButton: UIButton!
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var tableView: UITableView!
+
     var refreshTableView: UIRefreshControl!
     var rooms = Array<PFObject>()
     var publicRooms = Array<PFObject>()
+    var selectedIndex: NSInteger!
     
     override func viewDidAppear(animated: Bool) {
         fetchRooms()
@@ -64,7 +66,9 @@ class MainFeedViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detailRoomSegue" {
-            if let room = sender as? PFObject {
+            if let room = sender as? PFObject, let content = room["title"] as? String {
+                let colorContent = ColorContent(color: Colors.colorForRow(self.selectedIndex), content: content)
+                (segue.destinationViewController as! MediaDetailViewController).colorContent = colorContent
                 (segue.destinationViewController as! MediaDetailViewController).room = room
             }
         }
@@ -142,6 +146,7 @@ extension MainFeedViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedIndex = indexPath.row
         if segmentFeed.selectedSegmentIndex == 0 {
             performSegueWithIdentifier("detailRoomSegue", sender: rooms[indexPath.row])
         }

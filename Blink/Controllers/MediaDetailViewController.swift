@@ -17,6 +17,7 @@ class MediaDetailViewController: UIViewController {
     @IBOutlet var replyButton: UIButton!
     @IBOutlet var labelMessage: UILabel!
     
+    var colorContent: ColorContent!
     var room: PFObject!
     var blinks = Array<PFObject>()
     
@@ -31,10 +32,8 @@ class MediaDetailViewController: UIViewController {
             self.fetchBlink()
         }
         
-        labelMessage.text = ""
-        if let message = room["title"] as? String {
-            labelMessage.text = message
-        }
+        labelMessage.text = colorContent.content
+        labelMessage.textColor = colorContent.color
         
         collectionViewFlowLayout.itemSize = UIScreen.mainScreen().bounds.size
         collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal

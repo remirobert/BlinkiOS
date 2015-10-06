@@ -8,6 +8,16 @@
 
 import UIKit
 
+struct ColorContent {
+    var color: UIColor
+    var content: String
+    
+    init(color: UIColor, content: String) {
+        self.color = color
+        self.content = content
+    }
+}
+
 class Colors: NSObject {
     
     class func colorAndFaceFromColor(color: UIColor) -> (face: UIImage, secondColor: UIColor) {

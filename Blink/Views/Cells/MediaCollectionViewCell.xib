@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -12,21 +12,33 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-iW-OIo">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-iW-OIo">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dBy-eE-9zI">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="519"/>
+                        <animations/>
                     </imageView>
                 </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Y9x-iW-OIo" secondAttribute="trailing" id="1bT-U1-VDx"/>
+                <constraint firstAttribute="bottom" secondItem="dBy-eE-9zI" secondAttribute="bottom" id="Kjj-hO-Qbi"/>
+                <constraint firstItem="dBy-eE-9zI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UwR-e3-ldv"/>
                 <constraint firstItem="Y9x-iW-OIo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WcK-hL-NgS"/>
                 <constraint firstAttribute="bottom" secondItem="Y9x-iW-OIo" secondAttribute="bottom" id="Z8p-nW-u3g"/>
+                <constraint firstItem="dBy-eE-9zI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hFk-Ga-RG4"/>
                 <constraint firstItem="Y9x-iW-OIo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oW6-C7-vfB"/>
+                <constraint firstAttribute="trailing" secondItem="dBy-eE-9zI" secondAttribute="trailing" id="y8J-4c-07f"/>
             </constraints>
             <size key="customSize" width="341" height="519"/>
             <connections>
                 <outlet property="mediaContent" destination="Y9x-iW-OIo" id="N9H-S4-9MQ"/>
+                <outlet property="previewText" destination="dBy-eE-9zI" id="nw5-Pt-hdO"/>
             </connections>
             <point key="canvasLocation" x="334.5" y="392.5"/>
         </collectionViewCell>

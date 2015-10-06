@@ -101,16 +101,16 @@
                                 <exclude reference="u1B-Xm-HuB"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="87D-YV-7M3"/>
-                                <exclude reference="eBZ-1C-0im"/>
-                                <exclude reference="irH-fq-wDR"/>
-                                <exclude reference="Kfj-gx-bho"/>
-                                <exclude reference="PEm-1Z-JZ3"/>
+                                <exclude reference="Ae5-kZ-7B3"/>
+                                <exclude reference="wui-d6-06r"/>
                                 <exclude reference="D4R-bd-ZvA"/>
                                 <exclude reference="TN7-p7-I9h"/>
                                 <exclude reference="hXJ-3I-2ty"/>
-                                <exclude reference="Ae5-kZ-7B3"/>
-                                <exclude reference="wui-d6-06r"/>
+                                <exclude reference="Kfj-gx-bho"/>
+                                <exclude reference="PEm-1Z-JZ3"/>
+                                <exclude reference="87D-YV-7M3"/>
+                                <exclude reference="eBZ-1C-0im"/>
+                                <exclude reference="irH-fq-wDR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -121,16 +121,16 @@
                                 <include reference="u1B-Xm-HuB"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="87D-YV-7M3"/>
-                                <include reference="eBZ-1C-0im"/>
-                                <include reference="irH-fq-wDR"/>
-                                <include reference="Kfj-gx-bho"/>
-                                <include reference="PEm-1Z-JZ3"/>
+                                <include reference="Ae5-kZ-7B3"/>
+                                <include reference="wui-d6-06r"/>
                                 <include reference="D4R-bd-ZvA"/>
                                 <include reference="TN7-p7-I9h"/>
                                 <include reference="hXJ-3I-2ty"/>
-                                <include reference="Ae5-kZ-7B3"/>
-                                <include reference="wui-d6-06r"/>
+                                <include reference="Kfj-gx-bho"/>
+                                <include reference="PEm-1Z-JZ3"/>
+                                <include reference="87D-YV-7M3"/>
+                                <include reference="eBZ-1C-0im"/>
+                                <include reference="irH-fq-wDR"/>
                             </mask>
                         </variation>
                     </view>
@@ -380,7 +380,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="zlK-wS-B48"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -884,7 +884,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbD-LA-DIR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbD-LA-DIR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                             </imageView>

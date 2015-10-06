@@ -64,6 +64,12 @@ class CameraPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserverForName("dismissCameraPreviewController", object: nil, queue: nil) { (_) -> Void in
+            self.dismissViewControllerAnimated(false, completion: {
+                NSNotificationCenter.defaultCenter().postNotificationName("dismissCameraController", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("refreshBlink", object: nil)
+            })
+        }
         view.addSubview(holeView)
         view.addSubview(blurView)
         blurView.mas_makeConstraints { (make: MASConstraintMaker!) -> Void in
@@ -104,8 +110,14 @@ class CameraPreviewViewController: UIViewController {
                 self.performSegueWithIdentifier("selectFriendSegue", sender: nil)
             }
         }
-        
         manageSubView()
+    }
+    
+    func dismissCameraController() {
+        self.dismissViewControllerAnimated(true, completion: {
+            NSNotificationCenter.defaultCenter().postNotificationName("dismissCameraController", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("refreshBlink", object: nil)
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -200,11 +212,7 @@ extension CameraPreviewViewController {
                 if let _ = next as? PFObject {
                     
                     PushNotification.new(self.room!)
-                    
-                    self.dismissViewControllerAnimated(true, completion: {
-                        NSNotificationCenter.defaultCenter().postNotificationName("dismissCameraController", object: nil)
-                        NSNotificationCenter.defaultCenter().postNotificationName("refreshBlink", object: nil)
-                    })
+                    self.dismissCameraController()
                 }
             
             }) { (error: NSError!) -> Void in

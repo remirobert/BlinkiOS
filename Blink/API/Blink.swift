@@ -38,6 +38,7 @@ class Blink {
             signalSavePhoto.subscribeNext({ (next: AnyObject!) -> Void in
                 if let filePhoto = next as? PFFile {
                     if let signalSaveText = signalSaveText {
+
                         signalSaveText.subscribeNext({ (next: AnyObject!) -> Void in
                             if let fileText = next as? PFFile {
                                 subsciber.sendNext(RACTuple(objectsFromArray: [filePhoto, fileText]))

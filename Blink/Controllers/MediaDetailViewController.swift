@@ -53,6 +53,7 @@ class MediaDetailViewController: UIViewController {
         if segue.identifier == "replyBlinkSegue" {
             (segue.destinationViewController as! CameraViewController).room = room
             (segue.destinationViewController as! CameraViewController).parentController = self
+            (segue.destinationViewController as! CameraViewController).colorContent = colorContent
         }
     }
 }

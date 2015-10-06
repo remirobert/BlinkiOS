@@ -23,6 +23,7 @@ class CameraPreviewViewController: UIViewController {
     var dragEnable = Drag.Circle
     var blinkData: BlinkData!
     
+    var colorContent: ColorContent?
     var room: PFObject?
     var parentController: UIViewController?
     
@@ -30,6 +31,7 @@ class CameraPreviewViewController: UIViewController {
     @IBOutlet var textEditButton: UIButton!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var sendBlinkButton: UIButton!
+    @IBOutlet var labelRoom: UILabel!
     
     lazy var blurView: UIVisualEffectView! = {
         let darkBlur = UIBlurEffect(style: .Dark)
@@ -55,6 +57,7 @@ class CameraPreviewViewController: UIViewController {
         view.bringSubviewToFront(textEditButton)
         view.bringSubviewToFront(backButton)
         view.bringSubviewToFront(sendBlinkButton)
+        view.bringSubviewToFront(labelRoom)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -70,6 +73,15 @@ class CameraPreviewViewController: UIViewController {
                 NSNotificationCenter.defaultCenter().postNotificationName("refreshBlink", object: nil)
             })
         }
+        
+        if let colorContent = colorContent {
+            labelRoom.textColor = colorContent.color
+            labelRoom.text = colorContent.content
+        }
+        else {
+            labelRoom.text = ""
+        }
+        
         view.addSubview(holeView)
         view.addSubview(blurView)
         blurView.mas_makeConstraints { (make: MASConstraintMaker!) -> Void in

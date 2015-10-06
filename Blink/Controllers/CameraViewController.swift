@@ -17,9 +17,11 @@ class CameraViewController: UIViewController {
     @IBOutlet var rotationCameraButton: UIButton!
     @IBOutlet var galleryCameraButton: UIButton!
     @IBOutlet var takePictureButton: UIButton!
+    @IBOutlet var labelRoom: UILabel!
     
     var room: PFObject?
     var parentController: UIViewController?
+    var colorContent: ColorContent?
     
     @IBAction func exitCameraController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -30,6 +32,14 @@ class CameraViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserverForName("dismissCameraController", object: nil, queue: nil) { (_) -> Void in
             self.dismissViewControllerAnimated(false, completion: nil)
+        }
+        
+        if let colorContent = colorContent {
+            labelRoom.textColor = colorContent.color
+            labelRoom.text = colorContent.content
+        }
+        else {
+            labelRoom.text = ""
         }
         
         previewLayer = PBJVision.sharedInstance().previewLayer
@@ -64,6 +74,7 @@ class CameraViewController: UIViewController {
                 (segue.destinationViewController as! CameraPreviewViewController).photo = photo
                 (segue.destinationViewController as! CameraPreviewViewController).room = room
                 (segue.destinationViewController as! CameraPreviewViewController).parentController = parentController
+                (segue.destinationViewController as! CameraPreviewViewController).colorContent = colorContent
             }
         }
     }
